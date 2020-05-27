@@ -5,6 +5,7 @@ import { logout } from '../actions/auth';
 
 
 
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -37,7 +38,8 @@ class Login extends Component {
             username: "",
             password: ""
         })
-        console.log(this.props)    
+        
+        // this.location.push('/history')  
     };
 
     openScroll = () => {
@@ -47,7 +49,6 @@ class Login extends Component {
 
 
     render() {
-        console.log(this.props)
         const { username, password } = this.state
         return (
 
