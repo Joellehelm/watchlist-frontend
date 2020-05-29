@@ -7,19 +7,21 @@ import Home from './components/Home'
 import Account from './components/Account'
 import { connect } from 'react-redux';
 import { autoLogin } from './actions/auth';
-
+import { createBrowserHistory } from "history";
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Redirect
 } from "react-router-dom";
 
+const history = createBrowserHistory();
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      navClick: ""
+      navClick: "",
+      history: {}
     }
   }
 
@@ -28,6 +30,7 @@ class App extends Component {
         if (localStorage.getItem('token')) {
             this.props.autoLogin()
         }
+        
     }
 
   viewAccount = () => {
@@ -35,16 +38,17 @@ class App extends Component {
   }
   
   render() {
+
     return (
       <div>
-        <NavBar viewAccount={this.viewAccount} />
-        <Router>
+        <NavBar history={history} viewAccount={this.viewAccount} />
+        <Router history={history}>
           <Switch>
-            <Route exact path='/'> <Landing /> </Route>
             <Route exact path='/login'> <Login /> </Route>
             <Route exact path='/signup'> <SignUp /> </Route>
             <Route exact path='/home'> <Home navClick={this.state.navClick}/> </Route>
             <Route exact path='/account'> <Account /> </Route>
+            <Route exact path='/'> <Landing /> </Route>
           </Switch>
         </Router>
       </div>
