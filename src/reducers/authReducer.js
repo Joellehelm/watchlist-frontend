@@ -40,6 +40,13 @@ export default function (state = initialState, action) {
                 isLoggedIn: false
             }
 
+        case act.AUTO_LOGIN:
+            console.log(action.payload.user)
+            return {
+                ...state,
+                user: action.payload.user,
+                isLoggingIn: true
+            }
 
         default:
             return state;

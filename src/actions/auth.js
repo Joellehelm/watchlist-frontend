@@ -36,27 +36,37 @@ export const login = (user, history) => dispatch => {
     .then(r => r.json())
     .then(response => {
       if (response.user) {
-            dispatch({
-                type: action.LOGIN,
-                payload: response
-            })
+            dispatch({type: action.LOGIN, payload: response})
         localStorage.setItem('token', response.jwt) 
       } else {
-       dispatch({
-         type: action.WRONG_LOGIN,
-       })
+       dispatch({type: action.WRONG_LOGIN,})
       }
     })
     .catch(error => console.log('API Errors:', error))
   };
 
 
-
 export const logout = () => dispatch => {
     localStorage.removeItem("token");
-    dispatch({
-      type: action.LOGOUT
-    })
+    dispatch({type: action.LOGOUT})
   };
+
+
+export const autoLogin = () => dispatch => {
+  return  fetch("http://localhost:3000/auto_login", {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Authorization": `JWT ${localStorage.getItem('token')}`,
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  })
+  .then(r => r.json())
+  .then(response => {
+    if(response.user){
+      dispatch({type: action.AUTO_LOGIN, payload: response})
+    }
+  })
+}
 
 
