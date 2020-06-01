@@ -38,8 +38,7 @@ class Login extends Component {
             username: "",
             password: ""
         })
-        
-        // this.location.push('/history')  
+         
     };
 
     openScroll = () => {
