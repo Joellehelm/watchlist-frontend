@@ -1,17 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom'
 
-function NavBar(props){
-    
-    
 
-        return (
-            <div>
-                <h1>YO IM THE NAV BAR</h1>
-                <button onClick={() => props.history.push("/account")}>Account</button>
+import '../style/navBar.css'
+
+function NavBar(props) {
+
+
+
+    return (
+        <div>
+            <div className="navBar">
+                <div className="logo">
+                    <span className="xLogo">X</span>
+                    <span className="markLogo"> - Mark</span>
+                </div>
             
+
+                {/* <span onClick={() => props.history.push("/account")}>Account</span> */}
+
+
+
             </div>
-        );
-    
+            
+        </div>
+    );
+
 }
 
 
