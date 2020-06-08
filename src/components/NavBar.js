@@ -9,20 +9,12 @@ function NavBar(props) {
 
 
     return (
-        <div>
-            <div className="navBar">
-                <div className="logo">
-                    <span className="xLogo">X</span>
-                    <span className="markLogo"> - Mark</span>
-                </div>
-            
 
-                {/* <span onClick={() => props.history.push("/account")}>Account</span> */}
-
-
-
+        <div className="navBar">
+            <div className="logo">
+                <span className="xLogo">X</span>
+                <span className="markLogo"> - Mark</span>
             </div>
-            
         </div>
     );
 
