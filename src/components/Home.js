@@ -7,12 +7,12 @@ import '../style/Home.css'
 class Home extends Component {
     render() {
         return (
-            <div>
+            <div className="home-container">
 
                 {this.props.navClick !== "" ?
                     <Redirect to="/account"/>
                     :
-                    <div className="home-container">
+                    <div>
                         {this.props.auth.user.username}
                     </div>
 

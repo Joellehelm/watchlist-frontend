@@ -62,7 +62,7 @@ class SignUp extends Component {
                         </form>
                     </div>
                     :
-                    <button onClick={this.openScroll}>SignUp Scroll</button>
+                    <button className="signup-scroll"  onClick={this.openScroll}>SignUp Scroll</button>
                 }
             </div>
         );
