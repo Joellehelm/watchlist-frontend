@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
+import '../style/Home.css'
 
 
 class Home extends Component {
     render() {
-        console.log(window.history)
         return (
-            <div>
+            <div className="home-container">
 
                 {this.props.navClick !== "" ?
                     <Redirect to="/account"/>

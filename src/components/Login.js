@@ -61,7 +61,7 @@ class Login extends Component {
                         </form>
                     </div>
                     :
-                    <button onClick={this.openScroll}>Login Scroll</button>
+                    <button className="login-scroll" onClick={this.openScroll}>Login Scroll</button>
                 }
             </div>
 
