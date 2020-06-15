@@ -18,12 +18,7 @@ import {
 
 const history = createBrowserHistory();
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      navClick: ""
-    }
-  }
+ 
 
    componentDidMount() {
      
@@ -35,23 +30,20 @@ class App extends Component {
         
     }
 
-  viewAccount = () => {
-    this.setState({navClick: "account"})
-  }
-  
+
   render() {
 
     return (
       <div>
 
-        <NavBar history={history} viewAccount={this.viewAccount} />
+        <NavBar history={history} />
       
           <div className="app-container">
         <Router history={history}>
           <Switch>
             <Route exact path='/login'> <Login /> </Route>
             <Route exact path='/signup'> <SignUp /> </Route>
-            <Route exact path='/home'> <Home navClick={this.state.navClick}/> </Route>
+            <Route exact path='/home'> <Home /> </Route>
             <Route exact path='/account'> <Account /> </Route>
             <Route exact path='/'> <Landing /> </Route>
             <Route exact path="*"> <NoMatch /> </Route>

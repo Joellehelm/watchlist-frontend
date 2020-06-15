@@ -9,7 +9,7 @@ class CompassMenu extends Component {
             <div className="compass-menu-container">
                 <div className="compass-links">
 
-                    <a id="home" className="compass-item" href="/">Home</a>
+                    <a id="home" className="compass-item" href="/home">Home</a>
                     <a id="about" className="compass-item" href="/account">Account</a>
 
                 </div>
