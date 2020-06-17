@@ -4,4 +4,3 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const WRONG_LOGIN = 'WRONG_LOGIN';
 export const AUTO_LOGIN = 'AUTO_LOGIN';
-export const SEARCH_SHOWS = 'SEARCH_SHOWS';
