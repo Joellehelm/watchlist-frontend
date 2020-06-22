@@ -1,0 +1,12 @@
+.viewShowContainer {
+    margin-top: 200px;
+    text-align: center;
+    width: 100vw;
+}
+
+
+.viewShowInner {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

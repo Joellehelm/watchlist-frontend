@@ -33,7 +33,7 @@ class Home extends Component {
                 <div>placeholder for carosel</div>
                 <SearchShows showSearch={this.showSearch} />
                 <div className="showsContainer">
-                <Shows shows={this.state.shows} />
+                <Shows history={this.props.history} shows={this.state.shows} />
                 </div>
                 
             </div>
