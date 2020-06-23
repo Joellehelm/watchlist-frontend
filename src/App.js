@@ -4,6 +4,7 @@ import Login from './components/Login'
 import SignUp from './components/SignUp'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
+import ViewShow from './components/ViewShow'
 import Account from './components/Account'
 import NoMatch from './components/NoMatch'
 import './style/App.css'
@@ -43,8 +44,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/login'> <Login /> </Route>
             <Route exact path='/signup'> <SignUp /> </Route>
-            <Route exact path='/home'> <Home /> </Route>
+            <Route exact path='/home'> <Home history={history}/> </Route>
             <Route exact path='/account'> <Account /> </Route>
+            <Route exact path='/view-show'> <ViewShow /> </Route>
             <Route exact path='/'> <Landing /> </Route>
             <Route exact path="*"> <NoMatch /> </Route>
           </Switch>

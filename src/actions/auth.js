@@ -24,7 +24,7 @@ export const register = (user) => dispatch => {
 
 
 
-export const login = (user, history) => dispatch => {
+export const login = (user) => dispatch => {
     return fetch('http://localhost:3000/login', {
       // return fetch("https://showbookmark-backend.herokuapp.com/login", {
         method: "POST",

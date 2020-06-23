@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import ShowCard from './ShowCard'
+import '../style/Shows.scss'
 
 class Shows extends Component {
  
     mapShows = () => {
-        console.log("map shows")
         if(this.props.shows.length > 0){
-            return this.props.shows.map(show => <ShowCard show={show} key={show.imdb_id} />)
+            return this.props.shows.map(show => <ShowCard history={this.props.history} show={show} key={show.imdbID} />)
         }
     }
 
     render() {
         return (
-            <div>
+            <div className="shows">
                 {this.mapShows()}
             </div>
         );

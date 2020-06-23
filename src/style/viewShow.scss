@@ -1,0 +1,13 @@
+.viewShowContainer {
+    margin-top: 200px;
+    text-align: center;
+    width: 100vw;
+}
+
+
+.viewShowInner {
+    margin: 100px 100px 100px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // text-align: left;
+}

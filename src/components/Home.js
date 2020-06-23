@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
 import SearchShows from './SearchShows'
 import Shows from './Shows'
 import '../style/Home.css'
@@ -33,7 +32,9 @@ class Home extends Component {
             <div className="home-container">
                 <div>placeholder for carosel</div>
                 <SearchShows showSearch={this.showSearch} />
-                <Shows shows={this.state.shows} />
+                <div className="showsContainer">
+                <Shows history={this.props.history} shows={this.state.shows} />
+                </div>
                 
             </div>
         );

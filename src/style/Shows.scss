@@ -1,0 +1,27 @@
+@media (min-width: 601px){
+    .shows {
+        display: grid;
+        margin-top: 50px;
+        position: absolute;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 70px;
+        grid-column-gap: 100px;
+     
+    }
+    
+    
+}
+
+@media (max-width: 600px){
+    .shows {
+        display: grid;
+        margin-top: 50px;
+        position: absolute;
+        grid-template-columns: 1fr;
+        grid-row-gap: 70px;
+        grid-column-gap: 100px;
+     
+    }
+    
+    
+}
