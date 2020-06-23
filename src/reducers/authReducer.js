@@ -2,10 +2,7 @@ import * as act from '../actions/actionTypes';
 
 
 const initialState = {
-    user: {},
-    isLoggedIn: false,
-    creation: false,
-    wrong: null
+    user: {}
 };
 
 export default function (state = initialState, action) {
@@ -41,7 +38,6 @@ export default function (state = initialState, action) {
             }
 
         case act.AUTO_LOGIN:
-            console.log(action.payload.user)
             return {
                 ...state,
                 user: action.payload.user,

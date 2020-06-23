@@ -6,7 +6,7 @@ class Shows extends Component {
  
     mapShows = () => {
         if(this.props.shows.length > 0){
-            return this.props.shows.map(show => <ShowCard history={this.props.history} show={show} imdbID={show.imdbID} key={show.imdbID} />)
+            return this.props.shows.map(show => <ShowCard history={this.props.history} show={show} key={show.imdbID} />)
         }
     }
 

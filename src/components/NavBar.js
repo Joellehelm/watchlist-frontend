@@ -18,13 +18,17 @@ class NavBar extends Component {
         })
     }
 
+    logoClick = () => {
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
             <div className="navBar">
 
                 <div className="inner-nav">
 
-                    <div className="logo">
+                    <div onClick={this.logoClick} className="logo">
                         <span className="xLogo">X</span>
                         <span className="markLogo"> - Mark</span>
                     </div>
