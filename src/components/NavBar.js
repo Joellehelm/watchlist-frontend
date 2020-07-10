@@ -29,6 +29,7 @@ class NavBar extends Component {
                 <div className="inner-nav">
 
                     <div onClick={this.logoClick} className="logo">
+                        
                         <span className="xLogo">X</span>
                         <span className="markLogo"> - Mark</span>
                     </div>

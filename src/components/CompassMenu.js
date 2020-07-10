@@ -11,6 +11,7 @@ class CompassMenu extends Component {
 
                     <a id="home" className="compass-item" href="/home">Home</a>
                     <a id="about" className="compass-item" href="/account">Account</a>
+                    <a id="watchlist" className="compass-item" href="/watchlist">Watchlist</a>
 
                 </div>
             </div>

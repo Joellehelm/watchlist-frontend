@@ -7,6 +7,8 @@ import Home from './components/Home'
 import ViewShow from './components/ViewShow'
 import Account from './components/Account'
 import NoMatch from './components/NoMatch'
+import Watchlist from './components/Watchlist'
+import ShowProgress from './components/ShowProgress'
 import './style/App.css'
 import { connect } from 'react-redux';
 import { autoLogin } from './actions/auth';
@@ -20,17 +22,13 @@ import {
 const history = createBrowserHistory();
 class App extends Component {
  
-
    componentDidMount() {
-     
         if (localStorage.getItem('token')) {
             this.props.autoLogin()
         }else{
           history.push("/")
         }
-        
     }
-
 
   render() {
 
@@ -47,6 +45,8 @@ class App extends Component {
             <Route exact path='/home'> <Home history={history}/> </Route>
             <Route exact path='/account'> <Account /> </Route>
             <Route exact path='/view-show'> <ViewShow /> </Route>
+            <Route exact path='/watchlist'> <Watchlist history={history} /> </Route>
+            <Route exact path='/show-progress'> <ShowProgress history={history} /> </Route>
             <Route exact path='/'> <Landing /> </Route>
             <Route exact path="*"> <NoMatch /> </Route>
           </Switch>

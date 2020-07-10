@@ -17,7 +17,6 @@ class SearchShows extends Component {
     }
 
     handleSubmit = (event) => {
-        console.log("handle submit in searchShows")
         event.preventDefault()
         this.props.showSearch(event.target.search.value)
     }

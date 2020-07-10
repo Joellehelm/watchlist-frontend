@@ -34,6 +34,7 @@ class Login extends Component {
         }
 
         this.props.login(user)
+    
         this.setState({
             username: "",
             password: ""

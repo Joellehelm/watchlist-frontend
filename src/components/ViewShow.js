@@ -20,18 +20,33 @@ class ViewShow extends Component {
             })
     }
 
+    getTotalSeasons = () => {
+        const seasonNum = this.state.showInfo.totalSeasons
+        if(seasonNum === undefined || seasonNum === "N/A"){
+            return 0
+        }else{
+            return seasonNum
+        }
+    }
+
 
     addToWatchList = (event) => {
         event.preventDefault()
-        console.log(this.props.user)
+        const showInfo = this.state.showInfo
         const showObj = {
             user_id: this.props.user.user.id,
-            name: this.state.showInfo.Title,
-            genre: this.state.showInfo.Genre,
-            poster: this.state.showInfo.Poster,
-            imdbID: this.state.showInfo.imdbID,
-            total_seasons: this.state.showInfo.totalSeasons
+            name: showInfo.Title,
+            genre: showInfo.Genre,
+            poster: showInfo.Poster,
+            imdbID: showInfo.imdbID,
+            total_seasons: this.getTotalSeasons(),
+            year: showInfo.Year,
+            movie_or_show: showInfo.Type,
+            imdbRating: showInfo.imdbRating,
+            actors: showInfo.Actors,
+            awards: showInfo.Awards
         }
+        console.log("SHOW OBJECT", showObj)
         fetch('http://localhost:3000/shows', {
             method: "POST",
             headers: {
@@ -46,7 +61,6 @@ class ViewShow extends Component {
 
 
     render() {
-        console.log(this.props)
         return (
             <div className="viewShowContainer">
                 <div className="viewShowTitle">{this.props.show.Title}</div>

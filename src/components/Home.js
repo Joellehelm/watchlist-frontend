@@ -13,13 +13,10 @@ class Home extends Component {
         }
     }
 
-
    showSearch = (term) => {
     fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}`)
     .then(r => r.json())
     .then(response => {
-        console.log("showsearch function response below")
-        console.log(response)
         this.setState({shows: response.Search})
         
     })
@@ -44,5 +41,7 @@ class Home extends Component {
 const mapStateToProps = (state) => ({
     auth: state.auth
 })
+
+
 
 export default connect(mapStateToProps)(Home);

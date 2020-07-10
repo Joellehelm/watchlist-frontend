@@ -19,7 +19,6 @@ class Account extends Component {
 
     submitChanges = (event) => {
         event.preventDefault()
-        console.log("hello")
         fetch(`http://localhost:3000/users/${this.props.auth.user.id}`, {
             // fetch(`https://showbookmark-backend.herokuapp.com//users/${this.props.auth.user.id}`, {
             method: "PATCH",
