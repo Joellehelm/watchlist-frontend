@@ -6,8 +6,8 @@ import { getShowProgress } from '../actions/watchlistActions'
 class WatchListCard extends Component {
     
     handleClick = () => {
+        this.props.getShowProgress(this.props.auth.user.id, this.props.show.imdbID)
         this.props.history.push('/show-progress')
-        // this.props.getShowProgress()
     }
 
     render() {

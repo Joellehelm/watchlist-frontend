@@ -17,7 +17,8 @@ class Watchlist extends Component {
                     Poster: show.poster,
                     Title: show.name,
                     Year: show.year,
-                    Type: show.movie_or_show
+                    Type: show.movie_or_show,
+                    imdbID: show.imdbID
                 }
                 return <WatchListCard history={this.props.history} show={structuredShow} key={`${show.imdbId} ${show.name}`}/>
             })
