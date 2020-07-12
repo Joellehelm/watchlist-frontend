@@ -17,13 +17,14 @@ class Season extends Component {
     }
 
 
+
     render() {
 
 
         return (
             <div className="season-container">
 
-                <DropdownButton id="dropdown-basic-button" title="Season" drop="up">
+                <DropdownButton onSelect={this.props.seasonSelect} id="dropdown-basic-button" title="Season" drop="up">
                     {this.state.seasons.map(s => (<Dropdown.Item eventKey={s} key={s}>Season {s}</Dropdown.Item>))}
                 </DropdownButton>
 

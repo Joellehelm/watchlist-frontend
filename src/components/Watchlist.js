@@ -10,7 +10,6 @@ class Watchlist extends Component {
     }
 
     mapShows = () => {
-        console.log(this.props.watchlist.watchlist.shows)
         if(this.props.watchlist.watchlist.shows){
             return this.props.watchlist.watchlist.shows.map(show => {
                 const structuredShow = {
