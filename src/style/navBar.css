@@ -1,5 +1,6 @@
 @media (min-width: 601px) {
     .navBar {
+        z-index: 920;
         width: 100vw;
         height: 100px;
         position: fixed;
@@ -43,6 +44,7 @@
 
 @media (max-width: 600px) {
     .navBar {
+        z-index: 920;
         width: 100vw;
         height: 100px;
         position: fixed;

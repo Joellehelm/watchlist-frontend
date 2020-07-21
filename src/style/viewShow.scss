@@ -1,13 +1,30 @@
 .viewShowContainer {
-    margin-top: 200px;
+    margin-top: 180px;
     text-align: center;
     width: 100vw;
 }
 
 
 .viewShowInner {
-    margin: 100px 100px 100px 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    border: solid black 2px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+
+    justify-content: space-between;
+    
     // text-align: left;
+}
+
+.viewShowPoster img {
+    border: solid black 1px;
+}
+
+.showInfo {
+    display: grid;
+    max-height: 500px;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow: scroll;
+    line-height: 1em;
+    
 }

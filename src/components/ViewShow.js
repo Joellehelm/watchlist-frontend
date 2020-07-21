@@ -20,18 +20,33 @@ class ViewShow extends Component {
             })
     }
 
+    getTotalSeasons = () => {
+        const seasonNum = this.state.showInfo.totalSeasons
+        if(seasonNum === undefined || seasonNum === "N/A"){
+            return 0
+        }else{
+            return seasonNum
+        }
+    }
+
 
     addToWatchList = (event) => {
         event.preventDefault()
-        console.log(this.props.user)
+        const showInfo = this.state.showInfo
         const showObj = {
             user_id: this.props.user.user.id,
-            name: this.state.showInfo.Title,
-            genre: this.state.showInfo.Genre,
-            poster: this.state.showInfo.Poster,
-            imdbID: this.state.showInfo.imdbID,
-            total_seasons: this.state.showInfo.totalSeasons
+            name: showInfo.Title,
+            genre: showInfo.Genre,
+            poster: showInfo.Poster,
+            imdbID: showInfo.imdbID,
+            total_seasons: this.getTotalSeasons(),
+            year: showInfo.Year,
+            movie_or_show: showInfo.Type,
+            imdbRating: showInfo.imdbRating,
+            actors: showInfo.Actors,
+            awards: showInfo.Awards
         }
+        console.log("SHOW OBJECT", showObj)
         fetch('http://localhost:3000/shows', {
             method: "POST",
             headers: {
@@ -46,7 +61,6 @@ class ViewShow extends Component {
 
 
     render() {
-        console.log(this.props)
         return (
             <div className="viewShowContainer">
                 <div className="viewShowTitle">{this.props.show.Title}</div>
@@ -54,16 +68,37 @@ class ViewShow extends Component {
                 <div className="viewShowInner">
                     <div className="viewShowPoster"><img src={this.props.show.Poster} alt={this.props.show.Title + " show poster"} /></div>
                     <div className="showInfo">
-
-                        <p>Rated: {this.state.showInfo.Rated}</p>
-                        <p>Year: {this.state.showInfo.Year}</p>
-                        <p>IMDB Rating: {this.state.showInfo.imdbRating}</p>
-                        <p>Total Seasons: {this.state.showInfo.totalSeasons}</p>
-                        <p>Actors: {this.state.showInfo.Actors}</p>
-                        <p>Awards: {this.state.showInfo.Awards}</p>
-                        <p>Genre: {this.state.showInfo.Genre}</p>
-                        <p>Plot: {this.state.showInfo.Plot}</p>
-
+                        <div>
+                        <p className="info-title">Rated</p><p> {this.state.showInfo.Rated}</p>
+                        </div> 
+                        <div>
+                        <p className="info-title">Year</p>
+                        <p> {this.state.showInfo.Year}</p>
+                        </div> 
+                        <div>
+                        <p className="info-title">IMDB Rating</p>
+                        <p> {this.state.showInfo.imdbRating}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Total Seasons</p>
+                        <p> {this.state.showInfo.totalSeasons}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Actors</p>
+                        <p> {this.state.showInfo.Actors}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Awards</p>
+                        <p> {this.state.showInfo.Awards}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Genre</p>
+                        <p> {this.state.showInfo.Genre}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Plot</p>
+                        <p>{this.state.showInfo.Plot}</p>
+                        </div>
 
                     </div>
                 </div>
