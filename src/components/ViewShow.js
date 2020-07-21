@@ -68,16 +68,37 @@ class ViewShow extends Component {
                 <div className="viewShowInner">
                     <div className="viewShowPoster"><img src={this.props.show.Poster} alt={this.props.show.Title + " show poster"} /></div>
                     <div className="showInfo">
-
-                        <p>Rated: {this.state.showInfo.Rated}</p>
-                        <p>Year: {this.state.showInfo.Year}</p>
-                        <p>IMDB Rating: {this.state.showInfo.imdbRating}</p>
-                        <p>Total Seasons: {this.state.showInfo.totalSeasons}</p>
-                        <p>Actors: {this.state.showInfo.Actors}</p>
-                        <p>Awards: {this.state.showInfo.Awards}</p>
-                        <p>Genre: {this.state.showInfo.Genre}</p>
-                        <p>Plot: {this.state.showInfo.Plot}</p>
-
+                        <div>
+                        <p className="info-title">Rated</p><p> {this.state.showInfo.Rated}</p>
+                        </div> 
+                        <div>
+                        <p className="info-title">Year</p>
+                        <p> {this.state.showInfo.Year}</p>
+                        </div> 
+                        <div>
+                        <p className="info-title">IMDB Rating</p>
+                        <p> {this.state.showInfo.imdbRating}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Total Seasons</p>
+                        <p> {this.state.showInfo.totalSeasons}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Actors</p>
+                        <p> {this.state.showInfo.Actors}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Awards</p>
+                        <p> {this.state.showInfo.Awards}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Genre</p>
+                        <p> {this.state.showInfo.Genre}</p>
+                        </div>
+                        <div>
+                        <p className="info-title">Plot</p>
+                        <p>{this.state.showInfo.Plot}</p>
+                        </div>
 
                     </div>
                 </div>

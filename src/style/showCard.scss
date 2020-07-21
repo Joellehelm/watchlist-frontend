@@ -15,7 +15,10 @@
 }
 
 .showCard {
-
   width: 250px;
   height: 300px;
+}
+
+.showCard:hover {
+  cursor: pointer;
 }

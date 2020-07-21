@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../style/Account.css'
 
 
 class Account extends Component {
@@ -32,19 +33,23 @@ class Account extends Component {
         .then(r => r.json())
         .then(response => {
             console.log(response)
+            console.log(this.props.auth)
         })
     }
 
     render() {
         return (
-            <div>
-                {`Account container... logged in user is ${this.props.auth.user.email}`}
+            <div className="account-container">
+                <div className="account-inner">
+                <p className="account-title">Account</p>
+                {this.props.auth.user.email}
                 <form onSubmit={this.submitChanges}>
                     <input onChange={this.handleChange} type="text" name="email" placeholder={this.props.auth.user.email} value={this.state.email}/>
                     <input onChange={this.handleChange} type="text" name="password" placeholder="Password" value={this.state.password}/>
                     <input onChange={this.handleChange} type="text" name="passwordConfirmation" placeholder="Password Confirmation" value={this.state.passwordConfirmation}/>
                     <input type="submit" value="Submit"/>
                 </form>
+                </div>
             </div>
         );
     }

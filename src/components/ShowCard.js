@@ -25,6 +25,7 @@ class ShowCard extends Component {
     handleMouseOver = (event) => {
         event.preventDefault()
         this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+        
     }
 
    
