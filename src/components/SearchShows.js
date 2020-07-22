@@ -24,10 +24,10 @@ class SearchShows extends Component {
 
     render() {
         return (
-            <div>
+            <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>
                 <input onChange={this.handleChange} type="text" name="search" placeholder="Search..." />
-                <input type="submit" value="Submit"/>
+                <input type="hidden" value="Submit"/>
                 </form>
             </div>
         );
