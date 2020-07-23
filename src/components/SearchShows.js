@@ -19,6 +19,7 @@ class SearchShows extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.showSearch(event.target.search.value)
+        this.props.showContainerSlide()
     }
 
 

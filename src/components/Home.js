@@ -9,8 +9,13 @@ class Home extends Component {
     constructor() {
         super()
         this.state = {
-            shows: []
+            shows: [],
+            showsContainer: "shows-container-hidden"
         }
+    }
+
+    showContainerSlide = (event) => {
+        this.setState({showsContainer: "shows-container"})
     }
 
     showSearch = (term) => {
@@ -44,9 +49,9 @@ class Home extends Component {
             <div className="home-container">
                 <div className="home-box">
                     <div className="search-bar-container">
-                        <SearchShows showSearch={this.showSearch} />
+                        <SearchShows showContainerSlide={this.showContainerSlide} showSearch={this.showSearch} />
                     </div>
-                    <div className="showsContainer">
+                    <div className={this.state.showsContainer}>
                         <Shows history={this.props.history} shows={this.state.shows} />
                     </div>
                 </div>
