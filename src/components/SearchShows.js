@@ -20,6 +20,7 @@ class SearchShows extends Component {
         event.preventDefault()
         this.props.showSearch(event.target.search.value)
         this.props.showContainerSlide()
+        this.setState({searchTerm: ""})
     }
 
 
@@ -27,7 +28,7 @@ class SearchShows extends Component {
         return (
             <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} type="text" name="search" placeholder="Search..." />
+                <input onChange={this.handleChange} type="text" name="search" placeholder="Search..." value={this.state.searchTerm} />
                 <input type="hidden" value="Submit"/>
                 </form>
             </div>

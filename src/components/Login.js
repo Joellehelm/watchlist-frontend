@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../actions/auth';
-import { logout } from '../actions/auth';
+import { login, logout } from '../actions/auth';
 
 
 
@@ -34,6 +33,7 @@ class Login extends Component {
         }
 
         this.props.login(user)
+      
     
         this.setState({
             username: "",

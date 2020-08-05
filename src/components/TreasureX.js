@@ -4,8 +4,8 @@ class TreasureX extends Component {
     render() {
         return (
             <div className="episode-x">
-                <svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
+                <svg version="1.1" id="svg2"
+	 xmlns="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
 	 viewBox="0 0 18 18" enableBackground="new 0 0 18 18" xml="preserve">
 <g id="layer1" transform="translate(-158.85715,-405.50504)">
 	<path fill="red" id="text2160" d="M176.068,407.132l0.375,0.551c-0.033,0.134-0.117,0.283-0.251,0.45c-0.067,0.05-0.101,0.101-0.101,0.151
