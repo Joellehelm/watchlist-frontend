@@ -1,4 +1,5 @@
 import * as action from './actionTypes'
+// import { getWatchlist } from './watchlistActions'
 
 
 export const register = (user) => dispatch => {
@@ -38,8 +39,9 @@ export const login = (user) => dispatch => {
     .then(r => r.json())
     .then(response => {
       if (response.user) {
-            dispatch({type: action.LOGIN, payload: response})
+        dispatch({type: action.LOGIN, payload: response})
         localStorage.setItem('token', response.jwt) 
+        // dispatch(getWatchlist())
       } else {
        dispatch({type: action.WRONG_LOGIN,})
       }

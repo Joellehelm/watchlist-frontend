@@ -19,15 +19,17 @@ class SearchShows extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.showSearch(event.target.search.value)
+        this.props.showContainerSlide()
+        this.setState({searchTerm: ""})
     }
 
 
     render() {
         return (
-            <div>
+            <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} type="text" name="search" placeholder="Search..." />
-                <input type="submit" value="Submit"/>
+                <input onChange={this.handleChange} type="text" name="search" placeholder="Search..." value={this.state.searchTerm} />
+                <input type="hidden" value="Submit"/>
                 </form>
             </div>
         );

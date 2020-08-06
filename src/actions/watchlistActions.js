@@ -34,18 +34,18 @@ export const getShowProgress = (user_id, imdbID) => dispatch => {
     .then(r => r.json())
     .then(progress => {
         
-        fetch(`http://localhost:3000/show_by_imdbID`, {
-            method: "POST",
+        fetch(`http://localhost:3000/shows/${imdbID}`, {
+            method: "GET",
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Authorization": `JWT ${localStorage.getItem('token')}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
-            },
-            body: JSON.stringify({imdbID: imdbID})
+            }
         })
         .then(r => r.json())
         .then(show => {
+            console.log("DID IT WORK", show)
             dispatch({type: action.GET_SHOW_PROGRESS, payload: {show, progress}})
         })
 

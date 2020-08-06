@@ -9,14 +9,14 @@ class Episodes extends Component {
         const seasonNum = this.props.seasonNum
         return (
             <div className="episode-container">
-                <div className="season-header">
+    
                     {seasonNum ?
                         <p>Season {seasonNum}</p>
                         :
                         <p>Select A Season</p>
                     }
 
-                </div>
+       
                 <EpisodeTable progress={this.props.progress} userID={this.props.auth.user.id} episodes={this.props.episodes} />
             </div>
         );

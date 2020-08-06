@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
 import Compass from './Compass'
 import CompassMenu from './CompassMenu'
 import '../style/navBar.css'
