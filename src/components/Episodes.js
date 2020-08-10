@@ -11,9 +11,9 @@ class Episodes extends Component {
             <div className="episode-container">
     
                     {seasonNum ?
-                        <p>Season {seasonNum}</p>
+                        <div className="watchlist-title"><p className="styled-text">Season {seasonNum}</p></div>
                         :
-                        <p>Select A Season</p>
+                        <div className="watchlist-title"><p className="styled-text">Select A Season</p></div>
                     }
 
        

@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Popup, Button } from 'semantic-ui-react'
+import { viewShow } from '../actions/showActions'
+import ConfirmationPopup from './ConfirmationPopup'
+import skullCoin from '../style/skull.png'
 import '../style/ShowProgress.css'
 import Season from './Season'
 import Episodes from './Episodes'
+import ShowModal from './ShowModal'
 
 class ShowProgress extends Component {
     constructor() {
         super()
         this.state = {
             seasonNum: "",
-            episodes: []
+            episodes: [],
+            openModal: false,
+            confirmPopup: false
         }
     }
 
@@ -22,64 +29,113 @@ class ShowProgress extends Component {
     // Refactor this later.
 
     getEpisodes = (seasonNum) => {
-        const currentShowName = this.props.progress.showProgress.show.name
+        const currentShowName = this.props.progress.showProgress.show.show.name
         const show = this.props.progress.watchlist.shows.find(show => show["name"] === currentShowName);
         const episodes = show.seasons.find(season => season.season_number === parseInt(seasonNum)).episodes;
         this.setState({ episodes: episodes })
 
     }
 
+    openOrCloseModal = () => {
+        this.props.viewShow(this.props.progress.showProgress.show.show)
+        this.setState({ openModal: !this.state.openModal })
+    }
+
+    removeConfirmation = () => {
+        this.setState({confirmPopup: true})
+    }
+
+
+    removeFromWatchlist = () => {
+        fetch(`http://localhost:3000/user_shows/${this.props.progress.showProgress.show.user_show.id}`, {
+            method: "DELETE",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": `JWT ${localStorage.getItem('token')}`
+            }
+        })
+            .then(r => r.json())
+            .then(response => {
+                console.log(response)
+                this.props.history.push('/watchlist')
+                this.closePopup()
+            })
+    }
+
+
+    closePopup = () => {
+        this.setState({ confirmPopup: false })
+    }
+
     render() {
         const showProgress = this.props.progress.showProgress.progress
         const show = this.props.progress.showProgress.show
-        return (
-            <div>
-                {show ?
-                    <div className="show-progress-container">
-                        <div className="show-progress-inner">
-                            <div className="show-container">
 
-                                <div className="show-box">
-                                    <p>{show.name}</p>
-                                    <div className="show-box-inner">
-                                        <img src={show.poster} alt={show.name + " show poster"} />
-                                        <div className="show-box-details">
-                                            <p>{show.actors}</p>
-                                            <p>{show.awards}</p>
-                                            <p>{show.genre}</p>
-                                            <p>{show.imdbID}</p>
-                                            <p>{show.imdbRating}</p>
-                                            <p>{show.movie_or_show}</p>
-                                            <p>{show.plot}</p>
-                                            <p>{show.total_seasons}</p>
-                                            <p>{show.year}</p>
+        return (
+            <>
+                <ShowModal openOrCloseModal={this.openOrCloseModal} open={this.state.openModal} />
+                <ConfirmationPopup removeFromWatchlist={this.removeFromWatchlist} closePopup={this.closePopup} confirm={this.state.confirmPopup} />
+                <div>
+                    {show ?
+                        <div className="show-progress-container">
+                            <div className="show-progress-inner">
+                                <div className="show-container">
+
+                                    <div className="show-box">
+                                        <div className="watchlist-title"><p className="styled-text">{show.show.name}</p></div>
+                                        <div className="show-box-inner">
+                                            <img className="watchlist-poster" src={show.show.poster} alt={show.show.name + " show poster"} />
+                                            <div className="show-box-details">
+                                                <div className="watchlist-header-container">
+                                                    <p className="watchlist-details-header">{show.show.genre}</p>
+                                                    <p className="watchlist-show-year">{show.show.year}</p>
+                                                </div>
+                                                <div className="watchlist-buttons-container">
+                                                    <Button onClick={this.openOrCloseModal}>Show Details</Button>
+                                                    <Button onClick={this.removeConfirmation}>Remove From Watchlist</Button>
+
+                                                </div>
+
+                                                <div className="watchlist-details-bottom">
+
+                                                    <Popup content='IMDB Rating' trigger={<div className="modal-rating"><img className="rating-icon" src={skullCoin} alt="Pirate coin" />  {show.show.imdbRating}/10</div>} />
+
+                                                    <div className="total-seasons">
+                                                        <p>Total Seasons: {show.show.total_seasons}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <Season seasons={show.show.total_seasons} seasonSelect={this.seasonSelect} />
                                 </div>
-
-                                <Season seasons={show.total_seasons} seasonSelect={this.seasonSelect} />
+                                <Episodes episodes={this.state.episodes} showName={show.show.name} seasonNum={this.state.seasonNum} />
                             </div>
-                            <Episodes episodes={this.state.episodes} showName={show.name} seasonNum={this.state.seasonNum} />
-                        </div>
-                        <div className="current-progress">
-                            Current Progress
-                            <div className="progress-inner">
-                                {showProgress.length > 0 ?
-                                    <div>
-                                    <p>Season {showProgress[showProgress.length - 1].season.season_number}</p>
-                                    <p>Episode {showProgress[showProgress.length - 1].episode.episode_num}</p>
-                                    </div>
-                                    :
-                                    <p>Select a season and episode to save your progress.</p>
-                                }
+                            <div className="current-progress">
+                                <div className="watchlist-title"><p className="styled-text">Current Progress</p></div>
+                                <div className="progress-inner">
+                                    {showProgress.length > 0 ?
+
+                                        <div>
+                                            <p>Season {showProgress[showProgress.length - 1].season.season_number}</p>
+                                            <p>Episode {showProgress[showProgress.length - 1].episode.episode_num}</p>
+                                        </div>
+
+                                        :
+                                        <p>Select a season and episode to save your progress.</p>
+                                    }
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    :
-                    null
+                        :
+                        null
 
-                }
-            </div>
+                    }
+                </div>
+            </>
         );
     }
 }
@@ -90,7 +146,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-
+    viewShow
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowProgress);

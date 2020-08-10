@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getWatchlist } from '../actions/watchlistActions';
-import WatchListCard from './WatchListCard'
+import { getWatchlist, getShowProgress } from '../actions/watchlistActions';
+import ShowCard from './ShowCard'
 import '../style/watchlist.scss'
 class Watchlist extends Component {
 
     componentDidMount() {
         this.props.getWatchlist()
+    }
+
+    handleClick = (show) => {
+        this.props.getShowProgress(this.props.auth.user.id, show.imdbID)
+        this.props.history.push('/show-progress')
     }
 
     mapShows = () => {
@@ -19,9 +24,8 @@ class Watchlist extends Component {
                     Type: show.movie_or_show,
                     imdbID: show.imdbID
                 }
-                return <WatchListCard history={this.props.history} show={structuredShow} key={`${show.imdbId} ${show.name}`}/>
+                return <ShowCard history={this.props.history} handleClick={this.handleClick} show={structuredShow} key={`${show.imdbId} ${show.name}`}/>
             })
-
         }
     }
 
@@ -38,11 +42,13 @@ class Watchlist extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    watchlist: state.watchlist
+    watchlist: state.watchlist,
+    auth: state.auth
 })
 
 const mapDispatchToProps = {
-    getWatchlist
+    getWatchlist,
+    getShowProgress
 }
 
 

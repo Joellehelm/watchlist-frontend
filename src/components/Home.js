@@ -49,6 +49,7 @@ class Home extends Component {
             <div className="home-container">
                 <div className="home-box">
                     <div className="search-bar-container">
+
                         <SearchShows showContainerSlide={this.showContainerSlide} showSearch={this.showSearch} />
                     </div>
                     <div className={this.state.showsContainer}>

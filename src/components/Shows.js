@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ShowCard from './ShowCard'
 import '../style/Shows.scss'
 import { connect } from 'react-redux'
-import ModalExampleShorthand from './ModalExampleShorthand'
+import ShowModal from './ShowModal'
 import { viewShow } from '../actions/showActions'
 
 
@@ -15,14 +15,18 @@ class Shows extends Component {
         }
     }
 
+    handleClick = (show) => {
+        this.props.viewShow(show)
+        this.openOrCloseModal()
+
+    }
 
 
     mapShows = () => {
         if (this.props.shows.length > 0) {
-            return this.props.shows.map(show => <ShowCard viewShow={this.props.viewShow} history={this.props.history} show={show} key={show.imdbID} openOrCloseModal={this.openOrCloseModal} />)
+            return this.props.shows.map(show => <ShowCard handleClick={this.handleClick} history={this.props.history} show={show} key={show.imdbID} />)
         }
     }
-
 
 
     openOrCloseModal = () => {
@@ -32,7 +36,7 @@ class Shows extends Component {
     render() {
         return (
             <>                    
-            <ModalExampleShorthand openOrCloseModal={this.openOrCloseModal} open={this.state.openModal} />
+            <ShowModal openOrCloseModal={this.openOrCloseModal} open={this.state.openModal} />
 
                 <div className="shows">
                     {this.mapShows()}
