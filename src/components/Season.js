@@ -11,7 +11,9 @@ class Season extends Component {
         }
     }
 
+
     componentDidMount() {
+        console.log(this.props)
         const seasons = parseInt(this.props.seasons)
         this.setState({ seasons: Array.from(Array(seasons), (_, i) => i + 1) })
     }

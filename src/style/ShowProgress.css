@@ -7,7 +7,7 @@
     margin-right: 100px;
     position: fixed;
     border: 2px solid black;
-    border-bottom: none;
+    border-radius: 10px;
     -webkit-box-shadow: -5px 5px 10px 8px rgb(151, 146, 130);
     -moz-box-shadow: -5px 5px 10px 8px rgb(151, 146, 130);
     box-shadow: -5px 5px 10px 8px rgb(151, 146, 130);
@@ -19,13 +19,24 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.progress-inner div {
+.progress-inner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+.progress-inner {
     display: flex;
     justify-content: space-evenly;
     font-family: "Roboto";
     font-size: 20px;
     font-weight: 300;
+    width: 100%;
+}
 
+.progress-inner p {
+    margin: 0;
 }
 
 .show-box-inner {
@@ -34,6 +45,7 @@
     border-left: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
     height: 400px;
 }
 
@@ -62,9 +74,26 @@
 
 .current-progress {
     border: solid black 2px;
+    border-bottom: none;
     border-left: none;
     border-right: none;
     height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.progress-divider { 
+    font-family: "Roboto";
+    font-size: 20px;
+}
+
+.progress-left {
+    border-right: solid 1px black;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .season-container {
@@ -96,6 +125,7 @@
 
 }
 
+
 .watchlist-header-container {
     padding-bottom: 1em;
 }
@@ -124,4 +154,14 @@
     display: flex;
     align-items: center;
 }
+
+
+.ui.small.modal {
+    position: relative;
+    max-height: 200px;
+    top: none;
+    left: none;
+}
+
+
 

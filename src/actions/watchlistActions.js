@@ -33,7 +33,7 @@ export const getShowProgress = (user_id, imdbID) => dispatch => {
     })
     .then(r => r.json())
     .then(progress => {
-        console.log(progress)
+       
         fetch(`http://localhost:3000/shows/${imdbID}`, {
             method: "GET",
             headers: {

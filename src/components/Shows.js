@@ -23,7 +23,9 @@ class Shows extends Component {
 
 
     mapShows = () => {
-        if (this.props.shows.length > 0) {
+        if (this.props.shows === undefined) {
+            return <div className="no-search-results"><p>No Results...</p></div>
+        }else{
             return this.props.shows.map(show => <ShowCard handleClick={this.handleClick} history={this.props.history} show={show} key={show.imdbID} />)
         }
     }

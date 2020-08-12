@@ -6,7 +6,7 @@ class ConfirmationPopup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="conf-modal">
         <Confirm
           open={this.props.confirm}
           header='Remove this show from your watchlist?'

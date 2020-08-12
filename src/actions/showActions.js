@@ -5,7 +5,6 @@ export const viewShow = (show) => dispatch => {
     fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${show.imdbID}&plot=full`)
       .then(r => r.json())
       .then(response => {
-
         fetch('http://localhost:3000/show_in_watchlist', {
             method: "POST",
             headers: {

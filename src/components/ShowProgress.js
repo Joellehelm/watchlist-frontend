@@ -32,6 +32,7 @@ class ShowProgress extends Component {
         const currentShowName = this.props.progress.showProgress.show.show.name
         const show = this.props.progress.watchlist.shows.find(show => show["name"] === currentShowName);
         const episodes = show.seasons.find(season => season.season_number === parseInt(seasonNum)).episodes;
+
         this.setState({ episodes: episodes })
 
     }
@@ -58,7 +59,6 @@ class ShowProgress extends Component {
         })
             .then(r => r.json())
             .then(response => {
-                console.log(response)
                 this.props.history.push('/watchlist')
                 this.closePopup()
             })
@@ -72,6 +72,7 @@ class ShowProgress extends Component {
     render() {
         const showProgress = this.props.progress.showProgress.progress
         const show = this.props.progress.showProgress.show
+        
 
         return (
             <>
@@ -109,17 +110,17 @@ class ShowProgress extends Component {
                                             </div>
                                         </div>
                                     </div>
-
+                                        
                                     <Season seasons={show.show.total_seasons} seasonSelect={this.seasonSelect} />
                                 </div>
                                 <Episodes episodes={this.state.episodes} showName={show.show.name} seasonNum={this.state.seasonNum} />
                             </div>
                             <div className="current-progress">
-                                <div className="watchlist-title"><p className="styled-text">Current Progress</p></div>
-                                <div className="progress-inner">
+                                <div className="progress-left"><p className="progress-divider">Current Progress</p></div>
+                                <div className="progress-inner-container">
                                     {showProgress.length > 0 ?
 
-                                        <div>
+                                        <div className="progress-inner">
                                             <p>Season {showProgress[showProgress.length - 1].season.season_number}</p>
                                             <p>Episode {showProgress[showProgress.length - 1].episode.episode_num}</p>
                                         </div>

@@ -73,7 +73,7 @@ class ShowModal extends Component {
     const { animation, duration } = this.state
     const { open } = this.props
     return (
-
+      
       <TransitionablePortal open={open} transition={{ animation, duration }}><Modal open={true} onClose={this.handleModal} centered={true} size={"large"} closeIcon={{ style: { top: '1.0535rem', right: '1rem' }, color: 'black', name: 'close' }}>
         <Modal.Header >{this.props.show.Title}</Modal.Header>
         <Modal.Content image>
