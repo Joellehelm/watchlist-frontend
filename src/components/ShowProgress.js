@@ -10,6 +10,7 @@ import Episodes from './Episodes'
 import ShowModal from './ShowModal'
 
 class ShowProgress extends Component {
+    _isMounted = false;
     constructor() {
         super()
         this.state = {
@@ -20,21 +21,23 @@ class ShowProgress extends Component {
         }
     }
 
+    componentDidMount(){
+        this._isMounted = true;
+    }
+
+    componentWillUnmount(){
+        this._isMounted = false;
+    }
+
     seasonSelect = (event) => {
         this.setState({ seasonNum: event })
         this.getEpisodes(event)
     }
 
-    // Realized I already have an array of all episods in a season and this is not necessary.
-    // Refactor this later.
-
     getEpisodes = (seasonNum) => {
-        const currentShowName = this.props.progress.showProgress.show.show.name
-        const show = this.props.progress.watchlist.shows.find(show => show["name"] === currentShowName);
-        const episodes = show.seasons.find(season => season.season_number === parseInt(seasonNum)).episodes;
-
-        this.setState({ episodes: episodes })
-
+        const show = this.props.progress.showProgress.show.show
+        const season = show.seasons.find(s => s.season_number == seasonNum)
+        this.setState({ episodes: season.episodes })
     }
 
     openOrCloseModal = () => {
@@ -43,9 +46,8 @@ class ShowProgress extends Component {
     }
 
     removeConfirmation = () => {
-        this.setState({confirmPopup: true})
+        this.setState({ confirmPopup: true })
     }
-
 
     removeFromWatchlist = () => {
         fetch(`http://localhost:3000/user_shows/${this.props.progress.showProgress.show.user_show.id}`, {
@@ -64,7 +66,6 @@ class ShowProgress extends Component {
             })
     }
 
-
     closePopup = () => {
         this.setState({ confirmPopup: false })
     }
@@ -72,7 +73,6 @@ class ShowProgress extends Component {
     render() {
         const showProgress = this.props.progress.showProgress.progress
         const show = this.props.progress.showProgress.show
-        
 
         return (
             <>
@@ -93,10 +93,10 @@ class ShowProgress extends Component {
                                                     <p className="watchlist-details-header">{show.show.genre}</p>
                                                     <p className="watchlist-show-year">{show.show.year}</p>
                                                 </div>
+
                                                 <div className="watchlist-buttons-container">
                                                     <Button onClick={this.openOrCloseModal}>Show Details</Button>
                                                     <Button onClick={this.removeConfirmation}>Remove From Watchlist</Button>
-
                                                 </div>
 
                                                 <div className="watchlist-details-bottom">
@@ -110,8 +110,8 @@ class ShowProgress extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                        
-                                    <Season seasons={show.show.total_seasons} seasonSelect={this.seasonSelect} />
+
+                                    <Season seasons={show.show.seasons} seasonSelect={this.seasonSelect} />
                                 </div>
                                 <Episodes episodes={this.state.episodes} showName={show.show.name} seasonNum={this.state.seasonNum} />
                             </div>
@@ -133,7 +133,6 @@ class ShowProgress extends Component {
                         </div>
                         :
                         null
-
                     }
                 </div>
             </>

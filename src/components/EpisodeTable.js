@@ -42,7 +42,6 @@ class EpisodeTable extends Component {
                     this.props.getShowProgress(this.props.auth.user.id, this.props.progress.showProgress.show.show.imdbID)
                 })
         }
-
     }
 
 
