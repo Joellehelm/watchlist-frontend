@@ -8,10 +8,10 @@ import TreasureX from './TreasureX';
 class EpisodeTable extends Component {
 
     markProgress = (ep) => {
-        const showID = this.props.progress.showProgress.show.id
+        const showID = this.props.progress.showProgress.show.show.id
         const progress = { show_id: showID, user_id: this.props.userID, episode_id: ep.id, season_id: ep.season_id }
         const progressExists = this.props.progress.showProgress.progress.find(p => p.episode_id === ep.id)
-        console.log("PROGRESSEXISTS", progressExists)
+
         if (progressExists) {
             fetch(`http://localhost:3000/progresses/${progressExists.id}`, {
                 method: "DELETE",
@@ -24,8 +24,7 @@ class EpisodeTable extends Component {
             })
             .then(r => r.json())
             .then(data => {
-                console.log(data)
-                this.props.getShowProgress(this.props.auth.user.id, this.props.progress.showProgress.show.imdbID)
+                this.props.getShowProgress(this.props.auth.user.id, this.props.progress.showProgress.show.show.imdbID)
             })
         } else {
             fetch("http://localhost:3000/progresses", {
@@ -40,11 +39,9 @@ class EpisodeTable extends Component {
             })
                 .then(r => r.json())
                 .then(response => {
-                    console.log(response)
-                    this.props.getShowProgress(this.props.auth.user.id, this.props.progress.showProgress.show.imdbID)
+                    this.props.getShowProgress(this.props.auth.user.id, this.props.progress.showProgress.show.show.imdbID)
                 })
         }
-
     }
 
 

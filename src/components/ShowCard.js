@@ -12,13 +12,6 @@ class ShowCard extends Component {
         }
     }
 
-    handleClick = (event) => {
-        event.preventDefault()
-        this.props.viewShow(this.props.show)
-        this.props.openOrCloseModal()
-        // this.props.history.push('/view-show')
-
-    }
 
     handleMouseOver = (event) => {
         event.preventDefault()
@@ -31,7 +24,7 @@ class ShowCard extends Component {
         return (
           
 
-            <div onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOver} onClick={this.handleClick} className="showCard">
+            <div onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOver} onClick={() => this.props.handleClick(this.props.show)} className="showCard">
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
 
                     <div className="moviePosterContainer">

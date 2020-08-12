@@ -34,7 +34,8 @@ class Home extends Component {
         fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}`)
         .then(r => r.json())
         .then(response => {
-            this.setState({shows: response.Search})
+            this.setState({shows: response.Search, searched: true})
+            
         })
         .catch(error => console.log('API Errors:', error))
     
@@ -49,6 +50,7 @@ class Home extends Component {
             <div className="home-container">
                 <div className="home-box">
                     <div className="search-bar-container">
+
                         <SearchShows showContainerSlide={this.showContainerSlide} showSearch={this.showSearch} />
                     </div>
                     <div className={this.state.showsContainer}>
