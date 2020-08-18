@@ -15,7 +15,8 @@ class Account extends Component {
             passwordConfirmation: "",
             success: false,
             passwordError: false,
-            newPassword: ""
+            newPassword: "",
+            emailNotUpdated: false,
         }
     }
 
@@ -28,7 +29,7 @@ class Account extends Component {
 
     submitChanges = (event) => {
         event.preventDefault()
-        this.setState({ success: false, passwordError: false })
+        this.setState({emailNotUpdated: false})
         if (this.state.password !== this.state.passwordConfirmation) {
             this.setState({ success: false, passwordError: true })
         } else {
@@ -45,37 +46,26 @@ class Account extends Component {
             })
                 .then(r => r.json())
                 .then(response => {
-                    console.log(response)
-                    console.log(this.props.auth)
-                    this.setState({ success: true, passwordError: false })
+                    if(response.updated){
+                        this.setState({ emailNotUpdated: false, success: true, passwordError: false, password: "", passwordConfirmation: "", email: "" })
+                    }else{
+                        console.log("falseeeeee")
+                        this.setState({success: false, passwordError: false, emailNotUpdated: true})
+                    }
 
                 })
         }
     }
 
-    handlePWSubmit = (event) => {
-        event.preventDefault()
-        fetch(`http://localhost:3000/users/${this.props.auth.user.id}`, {
-            method: "PATCH",
-            headers: {
-                "Authorization": `JWT ${localStorage.getItem("token")}`,
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({password: this.state.newPassword, password_confirmation: this.state.password})
-        })
-        .then(r => r.json())
-        .then(response => {
-            console.log(response)
-        })
-    }
+  
 
     render() {
         const user = this.props.auth.user
         const panes = [
             { menuItem: 'Account Info', render: () => <Tab.Pane><AccountInfo user={user} /></Tab.Pane> },
-            { menuItem: 'Change Email', render: () => <Tab.Pane><ChangeEmail success={this.state.success} passwordError={this.state.passwordError} user={user} submitChanges={this.submitChanges} handleChange={this.handleChange} email={this.state.email} password={this.state.password} passwordConfirmation={this.state.passwordConfirmation} /></Tab.Pane> },
-            { menuItem: 'Change Password', render: () => <Tab.Pane><ChangePassword handleSubmit={this.handlePWSubmit} success={this.state.success} passwordError={this.state.passwordError} handleChange={this.handleChange} newPassword={this.state.newPassword} password={this.state.password} passwordConfirmation={this.state.passwordConfirmation} /></Tab.Pane> },
+            { menuItem: 'Change Email', render: () => <Tab.Pane><ChangeEmail success={this.state.success} emailNotUpdated={this.state.emailNotUpdated} passwordError={this.state.passwordError} user={user} submitChanges={this.submitChanges} handleChange={this.handleChange} email={this.state.email} password={this.state.password} passwordConfirmation={this.state.passwordConfirmation} /></Tab.Pane> },
+            { menuItem: 'Change Password', render: () => <Tab.Pane><ChangePassword /></Tab.Pane> },
+
         ]
         return (
             <div className="account-container">
