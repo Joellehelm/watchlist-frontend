@@ -2,7 +2,9 @@ import * as act from '../actions/actionTypes';
 
 
 const initialState = {
-    user: {}
+    user: {},
+    emailError: false,
+    usernameError: false   
 };
 
 export default function (state = initialState, action) {
@@ -12,14 +14,17 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 user: action.payload,
-                creation: true
+                creation: true,
+                emailError: false,
+                usernameError: false
             };
 
         case act.LOGIN:
             return {
                 ...state,
                 user: action.payload.user,
-                isLoggedIn: true
+                isLoggedIn: true,
+                success: true
             };
 
         case act.LOGOUT:
@@ -32,7 +37,7 @@ export default function (state = initialState, action) {
         case act.WRONG_LOGIN:
             return {
                 ...state,
-                wrong: true,
+                success: false,
                 user: {},
                 isLoggedIn: false
             }
@@ -42,6 +47,16 @@ export default function (state = initialState, action) {
                 ...state,
                 user: action.payload.user,
                 isLoggingIn: true
+            }
+
+        case act.SIGNUP_ERRORS:
+            return {
+                ...state,
+                user: {},
+                isLoggingIn: false,
+                emailError: action.payload.error.email !== undefined,
+                usernameError: action.payload.error.username !== undefined,
+                creation: undefined
             }
 
         default:

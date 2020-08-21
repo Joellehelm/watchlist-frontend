@@ -167,6 +167,16 @@
     background-color: whitesmoke !important;
   }
 
+  .signup-messages {
+    position: absolute;
+    margin-top: 30%;
+  }
+
+  .login-messages {
+    position: absolute;
+    margin-top: 30%;
+  }
+
 }
 
 /* Below is for mobile */

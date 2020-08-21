@@ -16,8 +16,10 @@ export const register = (user) => dispatch => {
     .then(r => r.json())
     .then(response => {
         if(response.status === "created"){
-          console.log(response)
+
             dispatch({type: action.CURRENT_USER, payload: response})
+        }else if(response.status === "not_acceptable"){
+          dispatch({type: action.SIGNUP_ERRORS, payload: response})
         }
     })
     .catch(error => console.log('API Errors:', error))
@@ -46,7 +48,7 @@ export const login = (user) => dispatch => {
        dispatch({type: action.WRONG_LOGIN,})
       }
     })
-    .catch(error => console.log('API Errors:', error))
+
   };
 
 

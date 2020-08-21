@@ -13,7 +13,6 @@ class Landing extends Component {
     constructor(){
         super() 
         this.state = {
-            scrollType: "",
             loginClick: false,
             signupClick: false,
             loginStyleName: "reveal-form-hidden",
@@ -31,43 +30,29 @@ class Landing extends Component {
         }
     }
 
-    renderForm = () => {
-        if(this.state.scrollType === "login"){
-            return <Login clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} />
-        }else if(this.state.scrollType === "signup"){
-            return <SignUp />
-        }
-    }
-
 
 
     render() {
         return (
             <div className="landing-container">
              
-            
-                
                 {
                     this.props.auth.user.username ?
                         <Redirect to="/home" />
+
                         :
-                        
+    
                         <div className="acc-scroll-container">
-                            {/* <div className="login-div"> */}
+                     
                             <div className="login-scroll" onClick={() => this.openScroll("login")}><p>Login</p></div>
-                            {/* </div> */}
                            
                             <div className="form-placeholder" style={this.state.signupClick ? {direction: "rtl"} : {direction: "ltr"}} >
-                                {/* {this.renderForm()} */}
                                 <Login clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} />
                                 <SignUp clicked={this.state.signupClick} signupStyleName={this.state.signupStyleName}/>
-                                
-                                
                             </div>
                            
-                             {/* <div className="signup-div"> */}
                             <div className="signup-scroll"  onClick={() => this.openScroll("signup")}>Sign Up</div>
-                             {/* </div> */}
+                      
                         </div>
                 }
           
