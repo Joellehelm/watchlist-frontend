@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button, Transition, TransitionablePortal, Container } from 'semantic-ui-react'
 import { login, logout } from '../actions/auth';
-
-
 
 
 class Login extends Component {
@@ -10,8 +9,7 @@ class Login extends Component {
         super(props);
         this.state = {
             username: '',
-            password: '',
-            clicked: false
+            password: ''
         };
     }
 
@@ -33,38 +31,33 @@ class Login extends Component {
         }
 
         this.props.login(user)
-      
-    
+
+
         this.setState({
             username: "",
             password: ""
         })
-         
+
     };
-
-    openScroll = () => {
-        this.setState({clicked: true})
-    }
-
 
 
     render() {
         const { username, password } = this.state
         return (
 
-            <div>
-                {this.state.clicked ?
-                    <div>
-                        <form onSubmit={this.handleSubmit}>
+            <Transition open={this.props.loginClick} animation="slide right" duration={1000} visible={this.props.loginClick}>
+                <Container><div  >
+                    <div className="reveal-form">
+                        <form className="login-form" onSubmit={this.handleSubmit}>
                             <input type="text" placeholder="Name" name="username" value={username} onChange={this.handleChange} />
                             <input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
-                            <button type="submit">Login</button>
+                            <Button className="login-btn" type="submit">Login</Button>
                         </form>
                     </div>
-                    :
-                    <button className="login-scroll" onClick={this.openScroll}>Login Scroll</button>
-                }
-            </div>
+
+                </div></Container>
+            </Transition>
+
 
         );
     }
