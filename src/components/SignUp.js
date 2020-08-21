@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../actions/auth'
+import { Button } from 'semantic-ui-react'
 
 class SignUp extends Component {
     constructor() {
@@ -50,7 +51,7 @@ class SignUp extends Component {
         const { username, email, password, password_confirmation } = this.state
         return (
             <div>
-                {this.state.clicked ?
+             
                     <div>
                         <form onSubmit={this.handleSubmit}>
                             <h1>Create Account</h1>
@@ -58,12 +59,10 @@ class SignUp extends Component {
                             <input type="email" placeholder="Email" name="email" value={email} onChange={this.handleChange} />
                             <input type="password" autoComplete="new-password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
                             <input type="password" autoComplete="new-password" placeholder="Password Confirmation" name="password_confirmation" value={password_confirmation} onChange={this.handleChange} />
-                            <button type="submit">Sign Up</button>
+                            <Button type="submit">Sign Up</Button>
                         </form>
                     </div>
-                    :
-                    <button className="signup-scroll"  onClick={this.openScroll}>SignUp Scroll</button>
-                }
+                
             </div>
         );
     }

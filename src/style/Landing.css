@@ -1,23 +1,121 @@
 @media (min-width: 601px){
+   .acc-scroll-container {
+      height: 600px;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+
+   .form-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 500px;
+       
+   }
+
+
    .landing-container {
-      padding-top: 300px;
+      padding-top: 100px;
       text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
    }
    
    .login-scroll {
-      width: 300px;
+      transform: rotate(-90deg);
+      font-size: 20px;
+      width: 305px;
       height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 8px 0 rgb(151, 146, 130) !important;
+      background-color: rgba(245, 224, 156) !important;
+      border-radius: 5px !important;
+      margin-right: -165px;
+   }
+
+   .login-scroll:hover {
+      cursor: pointer;
    }
    
    .signup-scroll {
-      width: 300px;
+      transform: rotate(90deg);
+      font-size: 20px;
+      width: 305px;
       height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 8px 0 rgb(151, 146, 130) !important;
+      background-color: rgb(245, 224, 156) !important;
+      border-radius: 5px !important;
+      margin-left: -165px;
    }
+
+   .signup-scroll:hover {
+      cursor: pointer;
+   }
+
+   .reveal-form {
+      width: 500px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0px 2px 8px 0 rgb(63, 63, 63);
+      box-shadow: 0 6px 8px 0 rgb(151, 146, 130);
+      border-radius: 5px;
+      background-color: rgba(245, 224, 156);
+   }
+   
+
+   .login-form {
+      padding: 50px;
+      height: 300px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+   }
+
+   .login-form-container {
+      width: 500px;
+   }
+
+   .login-form input {
+      height: 40px;
+      width: 300px;
+      text-align: center;
+      font-size: 25px;
+      border-radius: 10px;
+   }
+
+   .login-btn {
+      width: 200px;
+      height: 40px;
+     
+   }
+
+  
 }
 
 /* Below is for mobile */
 
 @media (max-width: 600px){
+   .acc-scroll-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+   }
+
+
    .landing-container {
       padding-top: 200px;
       text-align: center;
@@ -31,6 +129,30 @@
    .signup-scroll {
       width: 300px;
       height: 50px;
+   }
+
+
+   .login-form {
+      padding: 50px;
+      height: 300px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+   }
+
+   .login-form input {
+      height: 40px;
+      width: 300px;
+      text-align: center;
+      font-size: 25px;
+      border-radius: 10px;
+   }
+
+   .login-btn {
+      width: 200px;
+      height: 40px;
    }
 }
 
