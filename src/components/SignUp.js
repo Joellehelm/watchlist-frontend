@@ -50,18 +50,19 @@ class SignUp extends Component {
     render() {
         const { username, email, password, password_confirmation } = this.state
         return (
-            <div>
-             
-                    <div>
-                        <form onSubmit={this.handleSubmit}>
-                            <h1>Create Account</h1>
+            
+            <div style={this.props.clicked ? {visibility: "visible"} : {visibility: "hidden"}} className={this.props.signupStyleName}>
+            
+                {/* <div className={this.props.signupStyleName}> */}
+                        <form className="signup-form" onSubmit={this.handleSubmit}>
+                
                             <input type="text" placeholder="Name" name="username" value={username} onChange={this.handleChange} />
                             <input type="email" placeholder="Email" name="email" value={email} onChange={this.handleChange} />
                             <input type="password" autoComplete="new-password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
                             <input type="password" autoComplete="new-password" placeholder="Password Confirmation" name="password_confirmation" value={password_confirmation} onChange={this.handleChange} />
-                            <Button type="submit">Sign Up</Button>
+                            <Button className="signup-btn" type="submit">Sign Up</Button>
                         </form>
-                    </div>
+                    {/* </div> */}
                 
             </div>
         );

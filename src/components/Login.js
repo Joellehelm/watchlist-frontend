@@ -43,20 +43,22 @@ class Login extends Component {
 
     render() {
         const { username, password } = this.state
+
         return (
 
-            <Transition open={this.props.loginClick} animation="slide right" duration={1000} visible={this.props.loginClick}>
-                <Container><div  >
-                    <div className="reveal-form">
-                        <form className="login-form" onSubmit={this.handleSubmit}>
-                            <input type="text" placeholder="Name" name="username" value={username} onChange={this.handleChange} />
-                            <input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
-                            <Button className="login-btn" type="submit">Login</Button>
-                        </form>
-                    </div>
+            <div style={this.props.clicked ? {visibility: "visible"} : {visibility: "hidden"}} className={this.props.loginStyleName}>
+            
+                {/* <div className={this.props.loginStyleName}> */}
+          
 
-                </div></Container>
-            </Transition>
+                    <form className="login-form" onSubmit={this.handleSubmit}>
+                        <input type="text" placeholder="Name" name="username" value={username} onChange={this.handleChange} />
+                        <input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
+                        <Button className="login-btn" type="submit">Submit</Button>
+                    </form>
+                </div>
+
+            // </div>
 
 
         );

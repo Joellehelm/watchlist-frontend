@@ -15,7 +15,9 @@ class Landing extends Component {
         this.state = {
             scrollType: "",
             loginClick: false,
-            signupClick: false
+            signupClick: false,
+            loginStyleName: "reveal-form-hidden",
+            signupStyleName: "reveal-signup-hidden"
         }
     }
 
@@ -23,15 +25,15 @@ class Landing extends Component {
         this.setState({scrollType: type})
         if(type === "login"){
             console.log("LOGIN CLICK")
-            this.setState({signupClick: false, loginClick: true})
+            this.setState({signupClick: false, loginClick: true, loginStyleName: "reveal-form", signupStyleName: "reveal-signup-hidden"})
         }else if(type === "signup"){
-            this.setState({signupClick: false, loginClick: true})
+            this.setState({signupClick: true, loginClick: false, loginStyleName: "reveal-form-hidden", signupStyleName: "reveal-signup"})
         }
     }
 
     renderForm = () => {
         if(this.state.scrollType === "login"){
-            return <Login clicked={this.state.loginClick} />
+            return <Login clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} />
         }else if(this.state.scrollType === "signup"){
             return <SignUp />
         }
@@ -44,7 +46,6 @@ class Landing extends Component {
             <div className="landing-container">
              
             
-                <p>Description of the app. It does things...and stuff.</p>
                 
                 {
                     this.props.auth.user.username ?
@@ -56,8 +57,11 @@ class Landing extends Component {
                             <div className="login-scroll" onClick={() => this.openScroll("login")}><p>Login</p></div>
                             {/* </div> */}
                            
-                            <div className="form-placeholder">
-                                {this.renderForm()}
+                            <div className="form-placeholder" style={this.state.signupClick ? {direction: "rtl"} : {direction: "ltr"}} >
+                                {/* {this.renderForm()} */}
+                                <Login clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} />
+                                <SignUp clicked={this.state.signupClick} signupStyleName={this.state.signupStyleName}/>
+                                
                                 
                             </div>
                            
