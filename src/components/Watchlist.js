@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getWatchlist, getShowProgress } from '../actions/watchlistActions';
 import ShowCard from './ShowCard'
+import { Image } from 'semantic-ui-react'
+import InkSplatterFive from '../style/ink-splatter5.svg'
+import InkSplatterTwo from '../style/ink-splatter2.svg'
 import '../style/watchlist.scss'
 class Watchlist extends Component {
 
@@ -32,11 +35,16 @@ class Watchlist extends Component {
 
     render() {
         return (
+            <div className="watchlist-wrapper">
             <div className="watchlist-container">
+                <p className="watchlist-title">Watchlist</p>
                 <div className="watchlist-inner">
                     {this.mapShows()}
                 </div>
             </div>
+                <Image className="ink-splatter-image" src={InkSplatterFive} />
+                
+                </div>
         );
     }
 }

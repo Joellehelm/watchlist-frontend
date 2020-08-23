@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Landing from './components/Landing'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
-import NavBar from './components/NavBar'
+import TestNavBar from './components/TestNavBar'
 import Home from './components/Home'
 import ViewShow from './components/ViewShow'
 import Account from './components/Account'
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div>
 
-        <NavBar history={history} />
+        <TestNavBar history={history} />
       
           <div className="app-container">
         <Router history={history}>

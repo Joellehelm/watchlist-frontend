@@ -1,5 +1,5 @@
 .episode-table-container {
-    border: solid black 2px;
+    border: solid black 1px;
     border-left: none;
     border-right: none;
     border-bottom: none;
@@ -12,7 +12,34 @@
     cursor: pointer;
 }
 
+.table-info {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(220, 20, 60, 0) !important;
+}
+
+.pirate-x {
+    height: 50px;
+    width: 50px;
+}
+
 .table {
     margin-bottom: 0;
 }
 
+.ep-num {
+    font-family: "Red Rose", cursive;
+    color: crimson;
+    font-size: 16px;
+}
+
+.ep-title {
+    font-size: 16px;
+}
+
+.ep-date {
+    font-family: "Red Rose", cursive;
+    font-weight: 300;
+}

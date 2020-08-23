@@ -1,4 +1,4 @@
-@media (min-width: 601px) {
+/* @media (min-width: 601px) {
     .navBar {
         z-index: 920;
         width: 100vw;
@@ -37,12 +37,12 @@
         cursor: pointer;
         filter: drop-shadow(8px 8px 10px red);
     }
-}
+} */
 
 
 /* Below is for mobile devices */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .navBar {
         z-index: 920;
         width: 100vw;
@@ -80,5 +80,84 @@
     .compass:hover {
         cursor: pointer;
         filter: drop-shadow(8px 8px 10px red);
+    }
+} */
+
+@media (min-width: 601px) {
+    .nav-logo {
+        max-height: 75px;
+        max-width: 75px;
+    }
+
+    .logo-text {
+        font-size: 35px;
+        font-family: 'Julee', cursive;
+
+
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+    }
+
+    .test-nav-bar {
+        background-color: whitesmoke;
+        height: 200px;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 175px;
+        margin-right: 175px;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+       
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 18px;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 120px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+       
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 150px;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        /* grid-column-gap: 50px; */
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getShowProgress } from '../actions/watchlistActions'
 import Table from 'react-bootstrap/Table'
 import '../style/EpisodeTable.scss';
-import TreasureX from './TreasureX';
+import PirateX from '../style/pirate-x.svg';
 
 class EpisodeTable extends Component {
 
@@ -49,10 +49,10 @@ class EpisodeTable extends Component {
 
         return this.props.episodes.map(ep => {
             return <tr onClick={() => this.markProgress(ep)} className="table-row" key={ep.title}>
-                <td>{ep.episode_num}</td>
-                <td>{ep.title}</td>
-                <td>{ep.released}</td>
-                {this.props.progress.showProgress.progress.find(p => p.episode_id === ep.id) ? <td><TreasureX /></td> : <td>na</td>}
+                <td><div className="table-info ep-num">{ep.episode_num}</div></td>
+                <td><div className="table-info ep-title">{ep.title}</div></td>
+                <td><div className="table-info ep-date">{ep.released}</div></td>
+                {this.props.progress.showProgress.progress.find(p => p.episode_id === ep.id) ? <td><div className="table-info"><img className="pirate-x" src={PirateX} /></div></td> : <td><div className="table-info"></div></td>}
 
             </tr>
         })

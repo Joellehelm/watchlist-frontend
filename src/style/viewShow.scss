@@ -9,10 +9,7 @@
   margin-left: 100px;
   margin-right: 100px;
   display: flex;
-
   justify-content: space-between;
-
-
 }
 
 .viewShowPoster img {
@@ -23,9 +20,7 @@
   max-height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
   overflow: scroll;
-
 }
 
 .show-info-container {

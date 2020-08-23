@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../actions/auth'
-import { Button, Transition, Message } from 'semantic-ui-react'
+import { Button, Transition, Message, Input} from 'semantic-ui-react'
 
 
 class SignUp extends Component {
@@ -31,6 +31,7 @@ class SignUp extends Component {
         if (password !== password_confirmation) {
             this.setState({ passwordError: true })
         } else {
+            this.setState({ passwordError: false })
             let user = {
                 username: username,
                 email: email,
@@ -63,10 +64,10 @@ class SignUp extends Component {
 
                 <form className="signup-form" onSubmit={this.handleSubmit}>
 
-                    <input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
-                    <input type="email" placeholder="Email" name="email" value={email} onChange={this.handleChange} />
-                    <input type="password" autoComplete="new-password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
-                    <input type="password" autoComplete="new-password" placeholder="Password Confirmation" name="password_confirmation" value={password_confirmation} onChange={this.handleChange} />
+                    <Input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
+                    <Input type="email" placeholder="Email" name="email" value={email} onChange={this.handleChange} />
+                    <Input type="password" error={this.state.passwordError} autoComplete="new-password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
+                    <Input type="password" error={this.state.passwordError} autoComplete="new-password" placeholder="Password Confirmation" name="password_confirmation" value={password_confirmation} onChange={this.handleChange} />
                     <Button className="signup-btn" type="submit">Sign Up</Button>
 
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import EpisodeTable from './EpisodeTable';
 
 
+
 class Episodes extends Component {
 
     render() {
@@ -11,12 +12,12 @@ class Episodes extends Component {
             <div className="episode-container">
     
                     {seasonNum ?
-                        <div className="watchlist-title"><p className="styled-text">Season {seasonNum}</p></div>
+                        <div className="watchlist-table-title"><p className="styled-text">Season {seasonNum}</p></div>
                         :
-                        <div className="watchlist-title"><p className="styled-text">Select A Season</p></div>
+                        <div className="watchlist-table-title"><p className="styled-text">Select A Season</p></div>
                     }
 
-       
+    
                 <EpisodeTable progress={this.props.progress} userID={this.props.auth.user.id} episodes={this.props.episodes} />
             </div>
         );
