@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PirateX from '../style/pirate-x.svg'
+import { NavLink } from 'react-router-dom'
 import '../style/navBar.css'
 
 class TestNavBar extends Component {
@@ -19,13 +20,32 @@ class TestNavBar extends Component {
             <div className="test-nav-bar">
                 <div className="inner-nav">
                     <div className="nav-logo-container">
-                    <img className="nav-logo" src={PirateX}/>
-                    <p className="logo-text">-Mark</p>
+                    <img className="nav-logo" onClick={() => this.props.history.push('/home')} src={PirateX}/>
+                    <p className="logo-text" onClick={() => this.props.history.push('/home')} >-Mark</p>
                     </div>
                     <div className="nav-right-side">
-                    <div className="nav-link-container"><p onMouseOver={this.handleHover} onMouseLeave={this.mouseLeave} className="nav-link">Home</p></div>
-                    <div className="nav-link-container"><p onMouseOver={this.handleHover} onMouseLeave={this.mouseLeave} className="nav-link">Account</p></div>
-                    <div className="nav-link-container"><p onMouseOver={this.handleHover} onMouseLeave={this.mouseLeave} className="nav-link">Watchlist</p></div>
+
+                    <div className="nav-link-container">
+                        <p onMouseOver={this.handleHover} 
+                        onMouseLeave={this.mouseLeave} 
+                        className="nav-link"
+                        onClick={() => this.props.history.push('/home')}>Home</p>
+                        </div>
+
+                    <div className="nav-link-container">
+                        <p onMouseOver={this.handleHover} 
+                        onMouseLeave={this.mouseLeave} 
+                        className="nav-link"
+                        onClick={() => this.props.history.push('/account')}>Account</p>
+                        </div>
+
+                    <div className="nav-link-container">
+                        <p onMouseOver={this.handleHover} 
+                        onMouseLeave={this.mouseLeave} 
+                        className="nav-link"
+                        onClick={() => this.props.history.push('/watchlist')}>Watchlist</p>
+                        </div>
+
                         </div>
                 </div>
             </div>

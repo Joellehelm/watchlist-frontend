@@ -1,86 +1,7 @@
-/* @media (min-width: 601px) {
-    .navBar {
-        z-index: 920;
-        width: 100vw;
-        height: 100px;
-        position: fixed;
-        top: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-    .inner-nav {
-        display: grid;
-        grid-template-columns: 4fr 1fr;
-        padding-left: 150px;
-        padding-right: 150px;
-        margin-top: 50px;
-    }
-    .logo {
-        font-size: 30px;
-        padding-top: 30px;
-    }
-    .xLogo {
-        color: rgb(233, 10, 10);
-        font-weight: bold;
-    }
-    .markLogo {
-        color: black;
-    }
-    .compass-container {
-        text-align: right;
-    }
-    .compass {
-        width: 100px;
-        height: 100px;
-        fill: black;
-    }
-    .compass:hover {
-        cursor: pointer;
-        filter: drop-shadow(8px 8px 10px red);
-    }
-} */
-
-
 /* Below is for mobile devices */
 
 /* @media (max-width: 600px) {
-    .navBar {
-        z-index: 920;
-        width: 100vw;
-        height: 100px;
-        position: fixed;
-        top: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-    .inner-nav {
-        display: grid;
-        grid-template-columns: 4fr 1fr;
-        padding-left: 30px;
-        padding-right: 30px;
-        margin-top: 20px;
-    }
-    .logo {
-        font-size: 30px;
-        padding-top: 20px;
-    }
-    .xLogo {
-        color: rgb(233, 10, 10);
-        font-weight: bold;
-    }
-    .markLogo {
-        color: black;
-    }
-    .compass-container {
-        text-align: right;
-    }
-    .compass {
-        width: 80px;
-        height: 80px;
-        fill: black;
-    }
-    .compass:hover {
-        cursor: pointer;
-        filter: drop-shadow(8px 8px 10px red);
-    }
+   
 } */
 
 @media (min-width: 601px) {
@@ -89,11 +10,17 @@
         max-width: 75px;
     }
 
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
     .logo-text {
         font-size: 35px;
         font-family: 'Julee', cursive;
+    }
 
-
+    .logo-text:hover {
+        cursor: pointer;
     }
     
     .nav-logo-container {
@@ -101,7 +28,6 @@
         width: 250px;
         display: flex;
         align-items: center;
-        /* justify-content: center; */
     }
 
     .test-nav-bar {
@@ -122,7 +48,6 @@
     .nav-link {
         padding: 0;
         margin: 0;
-       
         display: flex;
         align-self: center;
         color: gray;
@@ -143,7 +68,6 @@
     .nav-link:hover {
         cursor: pointer;
         color: crimson;
-       
     }
 
     .hover-background {
@@ -155,7 +79,6 @@
 
     .nav-right-side {
         display: flex;
-        /* grid-column-gap: 50px; */
         align-items: center;
         flex-direction: row;
         justify-content: center;
