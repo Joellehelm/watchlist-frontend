@@ -1,53 +1,56 @@
 import React, { Component } from 'react';
-import Compass from './Compass'
-import CompassMenu from './CompassMenu'
+import PirateX from '../style/pirate-x.svg'
+import { NavLink } from 'react-router-dom'
 import '../style/navBar.css'
 
 class NavBar extends Component {
-    constructor() {
-        super()
-        this.state = {
-            navMenu: false
-        }
+
+    handleHover = (event) => {
+        console.log(event.target.parentElement)
+        event.target.parentElement.classList.add("hover-background")
     }
 
-    menuClick = () => {
-        this.setState({
-            navMenu: !this.state.navMenu
-        })
+    mouseLeave = (event) => {
+        event.target.parentElement.classList.remove("hover-background")
     }
 
-    logoClick = () => {
-        this.props.history.push('/home')
-    }
 
     render() {
         return (
-            <div className="navBar">
-
+            <div className="test-nav-bar">
                 <div className="inner-nav">
-
-                    <div onClick={this.logoClick} className="logo">
-                        
-                        <span className="xLogo">X</span>
-                        <span className="markLogo"> - Mark</span>
+                    <div className="nav-logo-container">
+                    <img className="nav-logo" onClick={() => this.props.history.push('/home')} src={PirateX}/>
+                    <p className="logo-text" onClick={() => this.props.history.push('/home')} >-Mark</p>
                     </div>
+                    <div className="nav-right-side">
 
-                    <div onClick={this.menuClick} className="compass-container">
-                        <Compass fill={"black"} />
-                    </div>
-                    
+                    <div className="nav-link-container">
+                        <p onMouseOver={this.handleHover} 
+                        onMouseLeave={this.mouseLeave} 
+                        className="nav-link"
+                        onClick={() => this.props.history.push('/home')}>Home</p>
+                        </div>
+
+                    <div className="nav-link-container">
+                        <p onMouseOver={this.handleHover} 
+                        onMouseLeave={this.mouseLeave} 
+                        className="nav-link"
+                        onClick={() => this.props.history.push('/account')}>Account</p>
+                        </div>
+
+                    <div className="nav-link-container">
+                        <p onMouseOver={this.handleHover} 
+                        onMouseLeave={this.mouseLeave} 
+                        className="nav-link"
+                        onClick={() => this.props.history.push('/watchlist')}>Watchlist</p>
+                        </div>
+
+                        </div>
                 </div>
-
-                {this.state.navMenu ?
-                    <CompassMenu />
-                    :
-                    null}
             </div>
         );
     }
-
 }
-
 
 export default NavBar;

@@ -4,12 +4,16 @@ function AccountInfo(props) {
     return (
         <div className="account-info-container">
             <div>
-                <p>Username:</p>
-                <p>{props.user.username}</p>
+                <div className="acc-inner-div">
+                    <p className="acc-info-title">Username:  </p>
+                    <p className="acc-info-text"> {props.user.username}</p>
+                </div>
             </div>
             <div>
-                <p>Email:</p>
-                <p>{props.user.email}</p>
+                <div className="acc-inner-div">
+                    <p className="acc-info-title">Email:  </p>
+                    <p className="acc-info-text"> {props.user.email}</p>
+                </div>
             </div>
         </div>
     );

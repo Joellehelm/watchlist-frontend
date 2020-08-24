@@ -4,7 +4,7 @@
    
 } */
 
-@media (min-width: 601px) {
+/* @media (min-width: 601px) {
     .nav-logo {
         max-height: 75px;
         max-width: 75px;
@@ -83,4 +83,90 @@
         flex-direction: row;
         justify-content: center;
     }
-}
+} */
+
+
+
+
+
+
+/* @media (min-width: 37.5625rem) { */
+    .nav-logo {
+        max-height: 4.6875rem;
+        max-width: 4.6875rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 2.1875rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        width: 15.625rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .test-nav-bar {
+        /* background-color: whitesmoke; */
+        height: 12.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 10.9375rem;
+        margin-right: 10.9375rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 1.125rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 7.5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 9.375rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+/* } */

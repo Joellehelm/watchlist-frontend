@@ -126,7 +126,7 @@ class ShowProgress extends Component {
                                         </div>
 
                                         :
-                                        <p>Select a season and episode to save your progress.</p>
+                                        <p className="select-a-season">Select a season and episode to save your progress.</p>
                                     }
                                 </div>
                             </div>

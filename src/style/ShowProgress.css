@@ -2,10 +2,8 @@
     max-height: 100vh;
     max-width: 100vw;
     text-align: center;
-    /* margin-top: 7%; */
-    /* margin-left: 10px;
-    margin-right: 100px; */
-    /* height: 650px; */
+  
+
     position: fixed;
     border: 1px solid black;
     border-radius: 10px;
@@ -14,14 +12,12 @@
     -webkit-box-shadow: -5px 5px 10px 8px rgba(0, 0, 0, 0.699);
     -moz-box-shadow: -5px 5px 10px 8px rgb(0, 0, 0, 0.699);
     box-shadow: -5px 5px 10px 5px rgb(0, 0, 0, 0.699);
-    /* background-image: url('treasuremap.svg');
-    background-repeat: no-repeat;
-    background-size: 900px; */
+
    
 }
 
 .show-progress-wrapper {
-    padding-top: 10%;
+    padding-top: 7%;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -31,8 +27,15 @@
     background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
     background-size: 900px, 500px;
     background-repeat: no-repeat;
-    background-position: 150% 100%, 0% 28%;
+    background-position: 150% 100%, 0% 23%;
 
+}
+
+.select-a-season {
+    color: crimson;
+    font-family: "Roboto";
+    font-size: 20px;
+    text-shadow: 1px 1px whitesmoke;
 }
 
 .show-progress-inner {
@@ -110,7 +113,6 @@
 }
 
 .progress-divider { 
-    /* font-family: "Roboto"; */
     font-family: "Red Rose", cursive;
     font-weight: 300;
     font-size: 20px;
@@ -194,3 +196,5 @@
 
 
 
+
+ 
