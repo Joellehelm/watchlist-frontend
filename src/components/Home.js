@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SearchShows from './SearchShows'
+import { Redirect } from 'react-router-dom'
 import Shows from './Shows'
 import '../style/Home.css'
 
@@ -14,8 +15,10 @@ class Home extends Component {
         }
     }
 
+
+
     showContainerSlide = (event) => {
-        this.setState({showsContainer: "shows-container"})
+        this.setState({ showsContainer: "shows-container" })
     }
 
     showSearch = (term) => {
@@ -30,24 +33,23 @@ class Home extends Component {
         //     })
         //     .catch(error => console.log('API Errors:', error))
         // }
-      
+
         fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}`)
-        .then(r => r.json())
-        .then(response => {
-            this.setState({shows: response.Search, searched: true})
-            
-        })
-        .catch(error => console.log('API Errors:', error))
-    
+            .then(r => r.json())
+            .then(response => {
+                this.setState({ shows: response.Search, searched: true })
+
+            })
+            .catch(error => console.log('API Errors:', error))
 
 
-      
+
+
     };
 
-
-    render() {
-        return (
-            <div className="home-container">
+    isAuthed = () => {
+        // if (this.props.auth.isLoggedIn) {
+            return <div className="home-container">
                 <div className="home-box">
                     <div className="search-bar-container">
 
@@ -58,6 +60,20 @@ class Home extends Component {
                     </div>
                 </div>
             </div>
+        // } else {
+        //     return <Redirect to={{ pathname: '/' }} />
+        // }
+    }
+
+
+
+
+    render() {
+        return (
+
+            <>
+                {this.isAuthed()}
+            </>
         );
     }
 }

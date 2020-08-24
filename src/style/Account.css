@@ -69,7 +69,7 @@
 
 
 
-
+@media (max-width: 4500px){
 
 .account-container {
     overflow: hidden;
@@ -167,9 +167,251 @@
     height: 2.5em;
     width: 18.75em;
 }
+}
+
+@media (max-width: 1440px){
+    .account-container {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('ship1flipped.svg'), url('ship1flipped.svg'), url('ink-splatter5.svg');
+        background-repeat: no-repeat;
+        background-size: 62rem, 62rem, 46rem;
+        background-position: -22% 75%, 123% 75%, center center;
+        
+    }
+    
+    .account-inner {
+        border-radius: 0.625em;
+        background-color: white;
+        margin-top: 10.9375em;
+        text-align: center;
+        width: 60em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0.125rem 0.125rem 0.375rem 0.0925rem rgba(0, 0, 0, 0.651);
+    }
+    
+    .ui.grid {
+        height: 37rem;
+        width: 62.5em;
+        padding: 2rem;
+    }
+    
+    .account-title {
+        font-size: 1.875em;
+    }
+    
+    .account-info-container {
+        font-size: 1.25em;
+        height: 22.5em;
+        display: grid;
+    }
+    
+    .account-info-container div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .acc-inner-div {
+      grid-column-gap: 1rem;
+    
+    }
+    
+    .acc-info-title {
+        font-size: 1.25em;
+        color: crimson;
+        font-family: "Red Rose", cursive;
+        margin: 0;
+    }
+    
+    .acc-info-text {
+        font-size: 1.10em;
+        font-family: "Roboto";
+    }
+    
+    .change-email-container {
+        height: 25.5em;
+    }
+    
+    .change-email-container form {
+        height: 18.75em;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .change-email-container form input {
+        height: 2.5em;
+        width: 18.75em;
+        border-radius: 0.625em;
+        font-size: 1.25em;
+        text-align: center;
+    }
+    
+    .update-email-header {
+        padding-top: 1.875em;
+        font-size: 1.25em;
+        font-weight: bold;
+        font-family: "Roboto";
+    }
+    
+    .update-email-btn {
+        height: 2.5em;
+        width: 18.75em;
+    }
+
+    .logout-link {
+        font-family: "Roboto";
+        font-weight: 300;
+    }
+
+    .logout-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+}
 
 
 
 
 
 
+
+
+
+@media (max-width: 799px){
+.account-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('ink-splatter5.svg');
+    background-repeat: no-repeat;
+    background-size: 50rem;
+    background-position: center center;
+    
+}
+
+.ui.grid .four{
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+
+.ui.fluid.vertical.tabular.menu {
+    height: 20rem;
+}
+
+.account-inner {
+    border-radius: 0.625rem;
+    background-color: white;
+    margin-top: 0rem;
+    text-align: center;
+    width: 30em;
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0.125rem 0.125rem 0.375rem 0.0925rem rgba(0, 0, 0, 0.651);
+}
+
+.ui.grid {
+    height: 25rem;
+    width: 30em;
+    padding: 1.5rem;
+}
+
+.account-title {
+    font-size: .875em;
+}
+
+.account-info-container {
+    font-size: 1rem;
+    height: 17rem;
+    display: grid;
+}
+
+.account-info-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acc-inner-div {
+  grid-column-gap: 1rem;
+
+}
+
+.acc-info-title {
+    font-size: 1rem;
+    color: crimson;
+    font-family: "Red Rose", cursive;
+    margin: 0;
+}
+
+.acc-info-text {
+    font-size: 1rem;
+    font-family: "Roboto";
+}
+
+.change-email-container {
+    height: 15rem;
+}
+
+.change-email-container form {
+    height: 15rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.change-email-container form input {
+    height: 3rem;
+    width: 14rem;
+    border-radius: 0.625em;
+    font-size: 1rem;
+    text-align: center !important;
+}
+
+.ui.visible.visible.visible.visible.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    font-size: 1rem;
+    position: absolute;
+    margin-top: 30rem;
+}
+
+.update-email-header {
+    padding-top: 1.875em;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: "Roboto";
+    padding: 0rem;
+}
+
+.update-email-btn {
+    height: 3rem;
+    width: 12rem;
+}
+
+.logout-link {
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+.logout-link:hover {
+    cursor: pointer;
+    color: crimson;
+}
+}
