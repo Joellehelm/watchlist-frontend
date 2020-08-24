@@ -4,6 +4,7 @@ import '../style/showCard.scss'
 import filmPlaceholder from '../style/film-placeholder.png'
 
 
+
 class ShowCard extends Component {
     constructor() {
         super()

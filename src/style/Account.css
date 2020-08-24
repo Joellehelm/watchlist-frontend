@@ -1,4 +1,4 @@
-.account-container {
+/* .account-container {
     display: flex;
     justify-content: center;
 }
@@ -64,6 +64,112 @@
 .update-email-btn {
     height: 40px;
     width: 300px;
+} */
+/* ABOVE IS ORIGINAL PX */
+
+
+
+
+
+.account-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('ship1flipped.svg'), url('ship1flipped.svg'), url('ink-splatter5.svg');
+    background-repeat: no-repeat;
+    background-size: 66.7rem, 66.7rem, 70rem;
+    background-position: -7% 67%, 107% 67%, center center;
+    
 }
+
+.account-inner {
+    border-radius: 0.625em;
+    background-color: white;
+    margin-top: 10.9375em;
+    text-align: center;
+    width: 62.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0.125rem 0.125rem 0.375rem 0.0925rem rgba(0, 0, 0, 0.651);
+}
+
+.ui.grid {
+    height: 40rem;
+    width: 62.5em;
+    padding: 2rem;
+}
+
+.account-title {
+    font-size: 1.875em;
+}
+
+.account-info-container {
+    font-size: 1.25em;
+    height: 25.5em;
+    display: grid;
+}
+
+.account-info-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acc-inner-div {
+  grid-column-gap: 1rem;
+
+}
+
+.acc-info-title {
+    font-size: 1.25em;
+    color: crimson;
+    font-family: "Red Rose", cursive;
+    margin: 0;
+}
+
+.acc-info-text {
+    font-size: 1.10em;
+    font-family: "Roboto";
+}
+
+.change-email-container {
+    height: 25.5em;
+}
+
+.change-email-container form {
+    height: 18.75em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.change-email-container form input {
+    height: 2.5em;
+    width: 18.75em;
+    border-radius: 0.625em;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.update-email-header {
+    padding-top: 1.875em;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: "Roboto";
+}
+
+.update-email-btn {
+    height: 2.5em;
+    width: 18.75em;
+}
+
+
+
+
 
 

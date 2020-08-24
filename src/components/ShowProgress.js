@@ -78,14 +78,14 @@ class ShowProgress extends Component {
             <>
                 <ShowModal openOrCloseModal={this.openOrCloseModal} open={this.state.openModal} />
                 <ConfirmationPopup removeFromWatchlist={this.removeFromWatchlist} closePopup={this.closePopup} confirm={this.state.confirmPopup} />
-                <div>
+                <div className="show-progress-wrapper">
                     {show ?
                         <div className="show-progress-container">
                             <div className="show-progress-inner">
                                 <div className="show-container">
 
                                     <div className="show-box">
-                                        <div className="watchlist-title"><p className="styled-text">{show.show.name}</p></div>
+                                        <div className="watchlist-table-title"><p className="styled-text">{show.show.name}</p></div>
                                         <div className="show-box-inner">
                                             <img className="watchlist-poster" src={show.show.poster} alt={show.show.name + " show poster"} />
                                             <div className="show-box-details">
@@ -126,7 +126,7 @@ class ShowProgress extends Component {
                                         </div>
 
                                         :
-                                        <p>Select a season and episode to save your progress.</p>
+                                        <p className="select-a-season">Select a season and episode to save your progress.</p>
                                     }
                                 </div>
                             </div>

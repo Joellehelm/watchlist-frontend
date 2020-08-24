@@ -6,3 +6,4 @@ export const AUTO_LOGIN = 'AUTO_LOGIN';
 export const VIEW_SHOW = 'VIEW_SHOW';
 export const WATCHLIST = 'WATCHLIST';
 export const GET_SHOW_PROGRESS = 'GET_SHOW_PROGRESS'
+export const SIGNUP_ERRORS = 'SIGNUP_ERRORS'
