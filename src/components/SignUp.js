@@ -37,7 +37,7 @@ class SignUp extends Component {
                 email: email,
                 password: password,
                 password_confirmation: password_confirmation,
-                // status: "created"
+           
             }
             this.props.register(user)
 
@@ -57,7 +57,6 @@ class SignUp extends Component {
     render() {
         const { usernameError, emailError } = this.props
         const { username, email, password, password_confirmation } = this.state
-        console.log(this.props)
         return (
 
             <div style={this.props.clicked ? { visibility: "visible" } : { visibility: "hidden" }} className={this.props.signupStyleName}>

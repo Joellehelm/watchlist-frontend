@@ -36,8 +36,8 @@ class Account extends Component {
             this.setState({ success: false, passwordError: true })
         } else {
 
-            fetch(`http://localhost:3000/users/${this.props.auth.user.id}`, {
-                // fetch(`https://showbookmark-backend.herokuapp.com//users/${this.props.auth.user.id}`, {
+            // fetch(`http://localhost:3000/users/${this.props.auth.user.id}`, {
+                fetch(`https://xmarkbackend.herokuapp.com/users/${this.props.auth.user.id}`, {
                 method: "PATCH",
                 headers: {
                     "Authorization": `JWT ${localStorage.getItem("token")}`,
