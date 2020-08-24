@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SearchShows from './SearchShows'
-import { Redirect } from 'react-router-dom'
 import Shows from './Shows'
 import '../style/Home.css'
 

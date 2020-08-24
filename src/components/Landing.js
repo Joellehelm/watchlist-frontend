@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Login from './Login'
 import SignUp from './SignUp'
 import { connect } from 'react-redux';
-import { Transition, Container } from 'semantic-ui-react' 
 import '../style/Landing.css'
 
 import { Redirect } from "react-router-dom";

@@ -36,7 +36,8 @@ class ShowProgress extends Component {
 
     getEpisodes = (seasonNum) => {
         const show = this.props.progress.showProgress.show.show
-        const season = show.seasons.find(s => s.season_number == seasonNum)
+    
+        const season = show.seasons.find(s => s.season_number === parseInt(seasonNum))
         this.setState({ episodes: season.episodes })
     }
 
