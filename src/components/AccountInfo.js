@@ -15,6 +15,9 @@ function AccountInfo(props) {
                     <p className="acc-info-text"> {props.user.email}</p>
                 </div>
             </div>
+            <div>
+                <p onClick={() => props.logout(props.history)} className="logout-link">Logout</p>
+            </div>
         </div>
     );
 }

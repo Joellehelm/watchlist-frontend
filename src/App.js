@@ -41,8 +41,8 @@ class App extends Component {
           <Switch>
             <Route exact path='/login'> <Login /> </Route>
             <Route exact path='/signup'> <SignUp /> </Route>
-            <Route exact path='/home'> <Home history={history}/> </Route>
-            <Route exact path='/account'> <Account /> </Route>
+            <Route exact path='/home'> <Home /> </Route>
+            <Route exact path='/account' > <Account history={history} /> </Route>
             <Route exact path='/watchlist'> <Watchlist history={history} /> </Route>
             <Route exact path='/show-progress'> <ShowProgress history={history} /> </Route>
             <Route exact path='/'> <Landing /> </Route>

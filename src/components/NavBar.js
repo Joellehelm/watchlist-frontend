@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PirateX from '../style/pirate-x.svg'
-import { NavLink } from 'react-router-dom'
 import '../style/navBar.css'
 
 class NavBar extends Component {
 
     handleHover = (event) => {
-        console.log(event.target.parentElement)
         event.target.parentElement.classList.add("hover-background")
     }
 
@@ -20,7 +18,7 @@ class NavBar extends Component {
             <div className="test-nav-bar">
                 <div className="inner-nav">
                     <div className="nav-logo-container">
-                    <img className="nav-logo" onClick={() => this.props.history.push('/home')} src={PirateX}/>
+                    <img className="nav-logo" onClick={() => this.props.history.push('/home')} src={PirateX} alt="x logo"/>
                     <p className="logo-text" onClick={() => this.props.history.push('/home')} >-Mark</p>
                     </div>
                     <div className="nav-right-side">

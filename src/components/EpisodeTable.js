@@ -52,7 +52,7 @@ class EpisodeTable extends Component {
                 <td><div className="table-info ep-num">{ep.episode_num}</div></td>
                 <td><div className="table-info ep-title">{ep.title}</div></td>
                 <td><div className="table-info ep-date">{ep.released}</div></td>
-                {this.props.progress.showProgress.progress.find(p => p.episode_id === ep.id) ? <td><div className="table-info"><img className="pirate-x" src={PirateX} /></div></td> : <td><div className="table-info"></div></td>}
+                {this.props.progress.showProgress.progress.find(p => p.episode_id === ep.id) ? <td><div className="table-info"><img className="pirate-x" src={PirateX} alt="x logo to mark place"/></div></td> : <td><div className="table-info"></div></td>}
 
             </tr>
         })

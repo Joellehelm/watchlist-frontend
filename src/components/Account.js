@@ -5,6 +5,8 @@ import { Tab } from 'semantic-ui-react'
 import AccountInfo from './AccountInfo'
 import ChangeEmail from './ChangeEmail'
 import ChangePassword from './ChangePassword'
+import { logout } from '../actions/auth'
+import { Redirect } from 'react-router-dom'
 
 class Account extends Component {
     constructor() {
@@ -29,7 +31,7 @@ class Account extends Component {
 
     submitChanges = (event) => {
         event.preventDefault()
-        this.setState({emailNotUpdated: false})
+        this.setState({ emailNotUpdated: false })
         if (this.state.password !== this.state.passwordConfirmation) {
             this.setState({ success: false, passwordError: true })
         } else {
@@ -46,33 +48,38 @@ class Account extends Component {
             })
                 .then(r => r.json())
                 .then(response => {
-                    if(response.updated){
+                    if (response.updated) {
                         this.setState({ emailNotUpdated: false, success: true, passwordError: false, password: "", passwordConfirmation: "", email: "" })
-                    }else{
-                        console.log("falseeeeee")
-                        this.setState({success: false, passwordError: false, emailNotUpdated: true})
+                    } else {
+                        this.setState({ success: false, passwordError: false, emailNotUpdated: true })
                     }
 
                 })
         }
     }
 
-  
+
 
     render() {
         const user = this.props.auth.user
         const panes = [
-            { menuItem: 'Account Info', render: () => <Tab.Pane><AccountInfo user={user} /></Tab.Pane> },
+            { menuItem: 'Account Info', render: () => <Tab.Pane><AccountInfo logout={this.props.logout} history={this.props.history} user={user} /></Tab.Pane> },
             { menuItem: 'Change Email', render: () => <Tab.Pane><ChangeEmail success={this.state.success} emailNotUpdated={this.state.emailNotUpdated} passwordError={this.state.passwordError} user={user} submitChanges={this.submitChanges} handleChange={this.handleChange} email={this.state.email} password={this.state.password} passwordConfirmation={this.state.passwordConfirmation} /></Tab.Pane> },
             { menuItem: 'Change Password', render: () => <Tab.Pane><ChangePassword /></Tab.Pane> },
 
         ]
         return (
-            <div className="account-container">
-                <div className="account-inner">
-                    <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
-                </div>
-            </div>
+            <>
+                {localStorage.getItem('token') ?
+                    <div className="account-container">
+                        <div className="account-inner">
+                            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
+                        </div>
+                    </div>
+                    :
+                    <Redirect to={{ pathname: '/' }} />
+                }
+            </>
         );
     }
 }
@@ -82,7 +89,11 @@ const mapStateToProps = (state) => ({
     auth: state.auth
 })
 
+const mapDispatchToProps = {
+    logout
+}
 
 
-export default connect(mapStateToProps)(Account);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Account);
 
