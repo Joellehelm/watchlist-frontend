@@ -74,6 +74,7 @@ class ShowProgress extends Component {
     render() {
         const showProgress = this.props.progress.showProgress.progress
         const show = this.props.progress.showProgress.show
+    
 
         return (
             <>
