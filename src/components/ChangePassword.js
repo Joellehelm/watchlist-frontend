@@ -27,7 +27,9 @@ class ChangePassword extends Component {
     if (this.state.password !== this.state.passwordConfirmation) {
       this.setState({ passwordNotMatch: true })
     } else {
-      fetch(`http://localhost:3000/update_password`, {
+      // fetch(`http://localhost:3000/update_password`, {
+        fetch(`https://xmarkbackend.herokuapp.com/update_password`, {
+        
         method: "PATCH",
         headers: {
           "Authorization": `JWT ${localStorage.getItem("token")}`,
@@ -88,67 +90,3 @@ class ChangePassword extends Component {
 export default ChangePassword;
 
 
-
-// import React from 'react';
-// import { Button, Input, Message, Transition } from 'semantic-ui-react'
-
-// function ChangePassword(props) {
-
-
-//     return (
-//         <div className="change-email-container">
-//             <p className="update-email-header">Change Password</p>
-//             <form onSubmit={props.handleSubmit} method="patch">
-//                 <Input onChange={props.handleChange} type="text" name="newPassword" placeholder="New Password" value={props.newPassword} />
-//                 <Input onChange={props.handleChange} error={props.passwordError} type="password" name="password" placeholder="Password" value={props.password} />
-//                 <Input onChange={props.handleChange} error={props.passwordError} type="password" name="passwordConfirmation" placeholder="Password Confirmation" value={props.passwordConfirmation} />
-//                 <Transition animation="jiggle" duration={1000}  visible={props.passwordError}>
-//                   <Message visible={props.passwordError} hidden={props.success} negative>
-//                     <Message.Header>Password and password confirmation must match.</Message.Header>
-//                   </Message>
-//                 </Transition>
-
-//                 <Transition animation="jiggle" duration={1000}  visible={props.success}>
-//                   <Message visible={props.success} hidden={props.success === false} positive>
-//                     <Message.Header>Password Successfully changed.</Message.Header>
-//                   </Message>
-//                 </Transition>
-
-//                 <Button className="update-email-btn" type="submit" value="Submit">Submit</Button>
-//             </form>
-
-//         </div>
-//     );
-// }
-
-// export default ChangePassword;
-
-
-
-
-    // handlePWSubmit = (event) => {
-    //     event.preventDefault()
-    //     this.setState({success: false})
-    //     if (this.state.password !== this.state.passwordConfirmation) {
-    //         this.setState({ passwordError: true })
-    //     } else {
-    //         fetch(`http://localhost:3000/update_password`, {
-    //             method: "PATCH",
-    //             headers: {
-    //                 "Authorization": `JWT ${localStorage.getItem("token")}`,
-    //                 "Content-Type": "application/json",
-    //                 "Accept": "application/json"
-    //             },
-    //             body: JSON.stringify({ user: { password: this.state.password, new_password: this.state.newPassword } })
-    //         })
-    //             .then(r => r.json())
-    //             .then(response => {
-    //                 console.log(response)
-    //                 if (response.updated) {
-    //                     this.setState({ password: "", passwordConfirmation: "", newPassword: "", success: true, passwordError: false})
-    //                 } else {
-    //                     this.setState({ success: false })
-    //                 }
-    //             })
-    //     }
-    // }

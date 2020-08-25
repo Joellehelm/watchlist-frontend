@@ -2,7 +2,9 @@ import * as action from './actionTypes'
 
 
 export const getWatchlist = () => dispatch => {
-    fetch(`http://localhost:3000/watchlist`, {
+    // fetch(`http://localhost:3000/watchlist`, {
+        fetch(`https://xmarkbackend.herokuapp.com/watchlist`, {
+        
         method: "GET",
         headers: {
             "Access-Control-Allow-Origin": "*",
@@ -21,7 +23,8 @@ export const getWatchlist = () => dispatch => {
 
 export const getShowProgress = (user_id, imdbID) => dispatch => {
 
-    fetch(`http://localhost:3000/get_progress`, {
+    // fetch(`http://localhost:3000/get_progress`, {
+        fetch(`https://xmarkbackend.herokuapp.com/get_progress`, {
         method: "POST",
         headers: {
             "Access-Control-Allow-Origin": "*",
@@ -33,7 +36,8 @@ export const getShowProgress = (user_id, imdbID) => dispatch => {
     })
         .then(r => r.json())
         .then(progress => {
-            fetch(`http://localhost:3000/shows/${imdbID}`, {
+            // fetch(`http://localhost:3000/shows/${imdbID}`, {
+                fetch(`https://xmarkbackend.herokuapp.com/shows/${imdbID}`, {   
                 method: "GET",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
