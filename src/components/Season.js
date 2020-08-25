@@ -6,6 +6,8 @@ import '../style/ShowProgress.css'
 class Season extends Component {
     render() {
         return (
+        <>
+        {this.props.seasons ?
             <div className="season-container">
 
                 <DropdownButton onSelect={this.props.seasonSelect} id="dropdown-basic-button" title="Season" drop="up">
@@ -13,6 +15,11 @@ class Season extends Component {
                 </DropdownButton>
 
             </div>
+            :
+            null
+    }
+            </>
+
         );
     }
 }
