@@ -34,7 +34,7 @@ class Login extends Component {
       <div style={this.props.clicked ? { visibility: "visible" } : { visibility: "hidden" }} className={this.props.loginStyleName}>
 
         <form className="login-form" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Name" name="username" value={username} onChange={this.handleChange} />
+          <input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
           
           <input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
           <Button className="login-btn" type="submit">Submit</Button>
