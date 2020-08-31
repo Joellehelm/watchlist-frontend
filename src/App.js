@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Account from './components/Account'
 import NoMatch from './components/NoMatch'
 import Watchlist from './components/Watchlist'
+import ProtectedRoute from './components/ProtectedRoute'
 import ShowProgress from './components/ShowProgress'
 import './style/App.css'
 import { connect } from 'react-redux';
@@ -40,8 +41,9 @@ class App extends Component {
         <Router history={history}>
           <Switch>
             <Route exact path='/login'> <Login /> </Route>
+            <ProtectedRoute loggedIn={this.props.auth.isLoggedIn} exact={true} path="/home" component={Home}/>
             <Route exact path='/signup'> <SignUp /> </Route>
-            <Route exact path='/home'> <Home /> </Route>
+            {/* <Route exact path='/home'> <Home /> </Route> */}
             <Route exact path='/account' > <Account history={history} /> </Route>
             <Route exact path='/watchlist'> <Watchlist history={history} /> </Route>
             <Route exact path='/show-progress'> <ShowProgress history={history} /> </Route>

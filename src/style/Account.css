@@ -67,7 +67,35 @@
 } */
 /* ABOVE IS ORIGINAL PX */
 
+@media (min-width: 1440px) and (max-width: 1440px) {
+    .account-container {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('ship1flipped.svg'), url('ship1flipped.svg'), url('ink-splatter5.svg');
+        background-repeat: no-repeat;
+        background-size: 62rem, 62rem, 46rem;
+        background-position: -22% 75%, 123% 75%, center center;
+        
+    }
+}
 
+@media (min-width: 1680px) and (max-width: 1680px) {
+    .account-container {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('ship1flipped.svg'), url('ship1flipped.svg'), url('ink-splatter5.svg');
+        background-repeat: no-repeat;
+        background-size: 66.7rem, 66.7rem, 70rem;
+        background-position: -7% 67%, 107% 67%, center center;
+        
+    }
+}
 
 @media (min-width: 1441px){
 
@@ -77,10 +105,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('ship1flipped.svg'), url('ship1flipped.svg'), url('ink-splatter5.svg');
-    background-repeat: no-repeat;
-    background-size: 66.7rem, 66.7rem, 70rem;
-    background-position: -7% 67%, 107% 67%, center center;
+    
     
 }
 
@@ -176,10 +201,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-image: url('ship1flipped.svg'), url('ship1flipped.svg'), url('ink-splatter5.svg');
-        background-repeat: no-repeat;
-        background-size: 62rem, 62rem, 46rem;
-        background-position: -22% 75%, 123% 75%, center center;
+       
         
     }
     

@@ -46,9 +46,10 @@ class Home extends Component {
 
     };
 
-    isAuthed = () => {
-        // if (this.props.auth.isLoggedIn) {
-            return <div className="home-container">
+
+    render() {
+        return (
+            <div className="home-container">
                 <div className="home-box">
                     <div className="search-bar-container">
 
@@ -59,20 +60,6 @@ class Home extends Component {
                     </div>
                 </div>
             </div>
-        // } else {
-        //     return <Redirect to={{ pathname: '/' }} />
-        // }
-    }
-
-
-
-
-    render() {
-        return (
-
-            <>
-                {this.isAuthed()}
-            </>
         );
     }
 }
