@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import SearchShows from './SearchShows'
 import Shows from './Shows'
 import '../style/Home.css'
@@ -64,10 +63,5 @@ class Home extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    auth: state.auth
-})
 
-
-
-export default connect(mapStateToProps)(Home);
+export default Home;

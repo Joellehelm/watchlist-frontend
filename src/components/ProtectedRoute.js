@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import Home from './Home';
 
-class ProtectedRoute extends Component {
-
-    render() {
-        console.log(this.props)
-        const Component = this.props.component;
-        const isAuthenticated = localStorage.getItem('token') ? true : false;
-    
-        return this.props.loggedIn ? (
-            <Component />
-        ) : (
-                <Redirect to={{ pathname: '/' }} />
-            );
-    }
-
+function ProtectedRoute({ children, ...rest }) {
+    return (
+        <Home
+          {...rest}
+          render={({ location }) =>
+            localStorage.getItem('token') ? (
+              children
+            ) : (
+              <Redirect
+                to={{
+                  pathname: "/",
+                  state: { from: location }
+                }}
+              />
+            )
+          }
+        />
+      );
 }
+
+
 
 export default ProtectedRoute;
