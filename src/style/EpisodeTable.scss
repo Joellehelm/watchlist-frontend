@@ -91,3 +91,15 @@
     font-family: "Red Rose", cursive;
     font-weight: 300;
 }
+
+@media(max-width: 1440px){
+    .episode-table-container {
+        border: solid black 0.0625rem;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        overflow-y: scroll;
+        max-height: 30rem;
+        height: 30rem;
+    }
+}

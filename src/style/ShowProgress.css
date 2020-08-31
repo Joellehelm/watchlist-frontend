@@ -195,6 +195,224 @@
 }
 
 
+@media (max-width: 1440px){
+    .show-progress-container {
+        max-height: 100vh;
+        max-width: 100vw;
+        text-align: center;
+      
+    
+        position: fixed;
+        border: 0.0625rem solid black;
+        border-radius: 0.625rem;
+        background-color: whitesmoke;
+        
+        -webkit-box-shadow: -0.3125rem 0.3125rem 0.625rem 0.5rem rgba(0, 0, 0, 0.699);
+        -moz-box-shadow: -0.3125rem 0.3125rem 0.625rem 0.5rem rgb(0, 0, 0, 0.699);
+        box-shadow: -0.3125rem 0.3125rem 0.625rem 0.3125rem rgb(0, 0, 0, 0.699);
+    
+       
+    }
+    
+    .show-progress-wrapper {
+        padding-top: 7%;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
+        background-size: 56.25rem, 31.25rem;
+        background-repeat: no-repeat;
+        background-position: 150% 100%, 0% 23%;
+    
+    }
+    
+    .select-a-season {
+        color: crimson;
+        font-family: "Roboto";
+        font-size: 1.25rem;
+        text-shadow: 0.0625rem 0.0625rem whitesmoke;
+    }
+    
+    .show-progress-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .progress-inner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 56.25rem;
+        background-position: 80% 40%;
+    }
+    
+    
+    .progress-inner {
+        display: flex;
+        justify-content: space-evenly;
+        font-family: "Roboto";
+        font-size: 1.25rem;
+        font-weight: 300;
+        width: 100%;
+    }
+    
+    .progress-inner p {
+        margin: 0;
+        color: crimson;
+    }
+    
+    .show-box-inner {
+        padding: 1.5625rem 1.5625rem 1.5625rem 1.5625rem;
+        border: solid black 0.0625rem;
+        border-left: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 0.625rem;
+        height: 25rem;
+        width: 40.625rem;
+    }
+    
+    .episode-inner {
+        padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+        border: solid black 0.0625rem;
+        border-left: none;
+        border-bottom: none;
+        height: 30rem;
+    }
+    
+    .watchlist-poster {
+        height: 21.875rem;
+        width: 15.625rem;
+        border: solid black 0.0625rem;
+        box-shadow: -0.125rem 0.125rem 0.625rem 0.0625rem rgb(0, 0, 0);
+    
+    }
+    
+    .show-box-details {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .current-progress {
+        border: solid black 0.0625rem;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        height: 6.25rem;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+    
+    .progress-divider { 
+        font-family: "Red Rose", cursive;
+        font-weight: 300;
+        font-size: 1.25rem;
+    }
+    
+    .progress-left {
+        border-right: solid 0.0625rem black;
+        width: 15.625rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .season-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0rem;
+        text-align: center;
+        border: solid black 0.0625rem;
+        border-top: none;
+        border-left: none;
+        border-bottom: none;
+      
+    }
+    
+    .btn-primary {
+        height: 3rem;
+        width: 25.75 !important;
+        background-color: gray !important;
+        border-color: white !important;
+    }
+    
+    .dropdown-menu {
+        width: 18.75rem !important;
+        max-height: 25rem;
+        overflow: scroll;
+    }
+    
+    .watchlist-details-header {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 0;
+    
+    }
+    
+    
+    .watchlist-header-container {
+        padding-bottom: 1em;
+    }
+    
+    .watchlist-show-year {
+        color: gray;
+    }
+    
+    
+    .watchlist-buttons-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 12.5rem;
+        
+    }
+    
+    .watchlist-details-bottom {
+        display: flex;
+        justify-content: space-between
+    }
+    
+    .total-seasons {
+        width: 6.875rem;
+        height: 3.125rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    .ui.small.modal {
+        position: relative;
+        max-height: 12.5rem;
+        top: none;
+        left: none;
+    }
 
+    .ui.modal>.actions{
+        padding: .8rem;
+    }
+
+    .ui.primary.button {
+        background-color: rgba(220, 20, 60, 0.877) !important;
+    }
+
+    .ui.primary.button:hover {
+        background-color: rgb(220, 20, 60) !important;
+    }
+
+
+  
+  
+  
+    
+}
 
  
