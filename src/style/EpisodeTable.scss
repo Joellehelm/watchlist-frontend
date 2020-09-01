@@ -103,3 +103,15 @@
         height: 30rem;
     }
 }
+
+@media(min-width: 350px) and (max-width: 449px){
+    .table-info {
+        min-height: 9rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:rgba(220, 20, 60, 0) !important;
+    }
+
+}

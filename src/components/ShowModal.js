@@ -98,7 +98,7 @@ class ShowModal extends Component {
             </Header>
             <div className="modal-description">
               <div className="modal-top">
-                <p>{this.props.show.Plot}</p>
+                <p className="plot-text">{this.props.show.Plot}</p>
                 <br />
                 <p className="bold-description">Actors</p>
                 <p>{this.props.show.Actors}</p>

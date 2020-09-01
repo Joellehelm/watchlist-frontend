@@ -1,6 +1,6 @@
 .app-container {
-    /* background-color: rgb(255, 247, 220); */
-    background-color: whitesmoke;
+ 
+    background-color: whitesmoke !important;
    
     
     min-height: 100vh;

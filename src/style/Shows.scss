@@ -23,7 +23,7 @@
 
 //   .shows {
 //     height: 100%;
-  
+
 //     max-height: 100%;
 //     display: flex;
 //     width: 95%;
@@ -44,7 +44,6 @@
 //     font-size: 40px;
 //     font-family: "Red Rose", cursive;
 //   }
-
 
 //   .ui.large.modal {
 //     max-height: 640px;
@@ -207,9 +206,6 @@
 //   }
 // }
 
-
-
-
 @media (min-width: 1441px) {
   .shows-container-hidden {
     line-height: 0;
@@ -231,7 +227,7 @@
     background-color: rgba(245, 224, 156, 0.534);
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
 
   .shows {
@@ -256,7 +252,6 @@
     font-size: 2.5rem;
     font-family: "Red Rose", cursive;
   }
-
 
   .ui.large.modal {
     max-height: 640px;
@@ -408,9 +403,7 @@
   }
 }
 
-
-
-@media (max-width: 1440px) {
+@media (max-width: 1440px) and (min-width: 1055px) {
   .shows-container-hidden {
     line-height: 0;
     width: 0rem;
@@ -431,7 +424,7 @@
     background-color: rgba(245, 224, 156, 0.534);
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
 
   .shows {
@@ -456,7 +449,6 @@
     font-size: 2.5rem;
     font-family: "Red Rose", cursive;
   }
-
 
   .ui.large.modal {
     max-height: 640px;
@@ -608,3 +600,414 @@
   }
 }
 
+@media (max-width: 1054px) {
+  .ui.large.modal {
+    width: 65rem !important;
+    position: relative;
+    height: 45rem;
+  }
+
+  .shows-container-hidden {
+    line-height: 0;
+    width: 0rem;
+    height: 0rem;
+  }
+
+  .shows-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+    border: rgb(245, 224, 156) solid 0.0625rem;
+    border-left: none;
+    transition: width 2s, height 0s, transform 2s;
+    box-shadow: 0 0.375rem 0.5rem 0 rgb(151, 146, 130);
+    border-radius: 0.3125rem;
+    background-color: rgba(245, 224, 156, 0.534);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shows {
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    width: 95%;
+    grid-row-gap: 1.875rem;
+    flex-flow: column wrap;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .no-search-results {
+    width: 100%;
+    height: 31.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-family: "Red Rose", cursive;
+  }
+
+  .modal-rating {
+    font-family: "Red Rose", cursive;
+    font-weight: 400;
+    max-height: 50px;
+  }
+
+  .description {
+    width: 18rem;
+    margin-left: 2rem;
+  }
+
+  .modal-description {
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+  }
+
+  .show-year {
+    color: gray;
+    font-family: "Red Rose", cursive;
+    font-weight: 300;
+  }
+
+  .bold-description {
+    font-weight: bold;
+  }
+
+  .ui.image img,
+  .ui.image svg {
+    max-width: 25rem;
+  }
+
+  .modal-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .modal-left {
+    text-align: center;
+    max-height: 530px;
+  }
+
+  .modal-top {
+    height: 400px;
+  }
+
+  .modal-button {
+    height: 50px;
+  }
+
+  .modal-total-seasons {
+    padding-top: 30px;
+    font-weight: 300;
+    font-family: "Red Rose", cursive;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .modal-btn-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .ui.modal > .image.content {
+    justify-content: space-around;
+  }
+
+  .rating-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .modal-rating:hover {
+    cursor: pointer;
+    animation: pulse 1.4s infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .ui.message {
+    margin: 0 !important;
+  }
+
+  .spyglass-icon {
+    height: 35px;
+    width: 35px;
+    transform: rotate(225deg);
+    margin-right: 15px;
+    animation: fall 0.7s linear;
+
+    @keyframes fall {
+      0% {
+        margin-top: -400px;
+        transform: rotate(270deg);
+      }
+      50% {
+        transform: rotate(250deg);
+      }
+      85% {
+        margin-top: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .spyglass-container span {
+    font-family: "Red Rose", cursive;
+    font-size: 20px;
+    background: radial-gradient(rgb(0, 204, 255) 20%, rgb(0, 238, 255) 40%, rgb(0, 255, 213) 60%, rgb(0, 255, 179) 80%);
+    background-size: 200% auto;
+    color: #000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite, fade 1s linear;
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+  }
+
+
+}
+
+@media (max-width: 949px) {
+  .ui.large.modal {
+    width: 55rem !important;
+    position: relative;
+    height: 45rem;
+  }
+
+  .ui.image img,
+  .ui.image svg {
+    max-width: 20rem;
+  }
+
+  .plot-text {
+    height: 10rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5em !important;
+      height: 0.5em !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  }
+}
+
+@media (max-width: 799px){
+  .ui.large.modal {
+    width: 45rem !important;
+    position: relative;
+    height: 45rem;
+  }
+
+  .plot-text {
+    height: 10rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5em !important;
+      height: 0.5em !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  }
+}
+
+@media (max-width: 767px){
+  .ui.large.modal {
+    width: 40rem !important;
+    position: relative;
+    height: 45rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5rem !important;
+      height: 0.5rem !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  
+  }
+
+  .ui.image img,
+  .ui.image svg {
+    max-width: 20rem;
+  }
+
+  .plot-text {
+    height: 10rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5em !important;
+      height: 0.5em !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  }
+}
+
+
+@media (max-width: 599px){
+  .ui.large.modal {
+    width: 30rem !important;
+    position: relative;
+    height: 45rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5rem !important;
+      height: 0.5rem !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  
+  }
+
+  .ui.image img,
+  .ui.image svg {
+    max-width: 20rem;
+  }
+
+  .plot-text {
+    height: 10rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5em !important;
+      height: 0.5em !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  }
+}
+
+
+@media (max-width: 449px) {
+  .ui.large.modal {
+    width: 25rem !important;
+    position: relative;
+    height: 45rem;
+    overflow-y: hidden;
+   
+  
+  }
+
+  .ui.image img,
+  .ui.image svg {
+    max-width: 20rem;
+  }
+
+  .plot-text {
+    height: 10rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5em !important;
+      height: 0.5em !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  }  
+
+}
+
+@media (max-width: 374px) and (min-width: 250px) {
+  .ui.large.modal {
+    width: 20rem !important;
+    position: relative;
+    height: 45rem;
+    overflow-y: hidden;
+  }
+
+  .modal-total-seasons {
+    padding-top: 0rem !important;
+    height: 1rem !important;
+    font-weight: 300;
+    font-family: "Red Rose", cursive;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+  .ui.centered.image {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+  .plot-text {
+    height: 10rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.5em !important;
+      height: 0.5em !important;
+     }
+   
+     &::-webkit-scrollbar-thumb {
+      background-color: gray !important;
+      border-radius: .3rem;
+   
+    
+     }
+  }  
+
+}
