@@ -11,7 +11,8 @@ class ShowModal extends Component {
     this.state = {
       success: false,
       duration: 500,
-      animation: "zoom"
+      animation: "zoom",
+      loading: false
     }
   }
 
@@ -29,6 +30,9 @@ class ShowModal extends Component {
 
   addToWatchList = (event) => {
     event.preventDefault()
+
+    this.setState({loading: true})
+
     const showInfo = this.props.show
     const showObj = {
       user_id: this.props.user.user.id,
@@ -46,6 +50,7 @@ class ShowModal extends Component {
     }
 
     fetch('http://localhost:3000/shows', {
+      // fetch('https://xmarkbackend.herokuapp.com/shows', {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -60,6 +65,7 @@ class ShowModal extends Component {
         if (response.id) {
           this.setState({ success: true })
         }
+        this.setState({loading: false})
       })
   }
 
@@ -92,7 +98,7 @@ class ShowModal extends Component {
             </Header>
             <div className="modal-description">
               <div className="modal-top">
-                <p>{this.props.show.Plot}</p>
+                <p className="plot-text">{this.props.show.Plot}</p>
                 <br />
                 <p className="bold-description">Actors</p>
                 <p>{this.props.show.Actors}</p>
@@ -118,7 +124,7 @@ class ShowModal extends Component {
                   </div>
 
                   :
-                  <Button onClick={this.addToWatchList} className="modal-button">Add to Watchlist</Button>
+                  <Button loading={this.state.loading} onClick={this.addToWatchList} className="modal-button">Add to Watchlist</Button>
                 }
               </div>
             </div>

@@ -14,6 +14,7 @@ class EpisodeTable extends Component {
 
         if (progressExists) {
             fetch(`http://localhost:3000/progresses/${progressExists.id}`, {
+                // fetch(`https://xmarkbackend.herokuapp.com/progresses/${progressExists.id}`, {
                 method: "DELETE",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -28,6 +29,7 @@ class EpisodeTable extends Component {
             })
         } else {
             fetch("http://localhost:3000/progresses", {
+            // fetch("https://xmarkbackend.herokuapp.com/progresses", {
                 method: "POST",
                 headers: {
                     "Access-Control-Allow-Origin": "*",

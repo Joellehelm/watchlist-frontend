@@ -90,7 +90,7 @@
 
 
 
-@media (min-width: 900px) {
+
   
     .nav-logo {
         max-height: 4.6875rem;
@@ -170,14 +170,50 @@
         flex-direction: row;
         justify-content: center;
     }
+
+@media (min-width: 1440px) {
+    .test-nav-bar {
+        height: 10rem;
+    }
 }
 
+@media(max-width: 950px) {
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
 
-@media (max-width: 700px ){
+    .test-nav-bar {
+        height: 10rem;
+        width: 100vw;
+        position: fixed;
+    }
 
     .nav-logo {
-        max-height: 2.6875rem;
-        max-width: 2.6875rem;
+        max-height: 3rem;
+        max-width: 3rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 899px) {
+    .inner-nav {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+@media (max-width: 849px ) {
+
+    .nav-logo {
+        max-height: 4rem;
+        max-width: 4rem;
     }
 
     .nav-logo:hover {
@@ -185,7 +221,7 @@
     }
 
     .logo-text {
-        font-size: 1.1875rem;
+        font-size: 2rem;
         font-family: 'Julee', cursive;
     }
 
@@ -200,7 +236,330 @@
     }
 
     .test-nav-bar {
-        /* background-color: whitesmoke; */
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        margin-top: 4rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 1rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 5.5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 749px ) {
+
+    .nav-logo {
+        max-height: 4rem;
+        max-width: 4rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .test-nav-bar {
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        margin-top: 3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 1rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 5.5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 849px ) {
+
+    .nav-logo {
+        max-height: 4rem;
+        max-width: 4rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .test-nav-bar {
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        margin-top: 3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 1rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 5.5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 674px ) {
+
+    .nav-logo {
+        max-height: 4rem;
+        max-width: 4rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .test-nav-bar {
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        height: 100%;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top: 3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 1rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 5.5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 579px ) {
+
+    .nav-logo {
+        max-height: 4rem;
+        max-width: 4rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .test-nav-bar {
         height: 2.5rem;
         width: 100vw;
         position: fixed;
@@ -243,7 +602,255 @@
     .hover-background {
         background-image: url('ink-splatter3.svg');
         background-repeat: no-repeat;
-        background-size: 9.375rem;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 499px ) {
+
+    .nav-logo {
+        max-height: 3rem;
+        max-width: 3rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 9rem;
+    }
+
+    .test-nav-bar {
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        height: 100%;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top: 3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: 1rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 410px ) {
+
+    .nav-logo {
+        max-height: 3rem;
+        max-width: 3rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 7rem;
+    }
+
+    .test-nav-bar {
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        height: 100%;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: .8rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 4.5rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
+        background-position: center 60%;
+    }
+
+    .nav-right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 320px ) {
+
+    .nav-logo {
+        max-height: 3rem;
+        max-width: 3rem;
+    }
+
+    .nav-logo:hover {
+        cursor: pointer;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        font-family: 'Julee', cursive;
+    }
+
+    .logo-text:hover {
+        cursor: pointer;
+    }
+    
+    .nav-logo-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 7rem;
+    }
+
+    .test-nav-bar {
+        height: 2.5rem;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .inner-nav {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        height: 100%;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-self: center;
+        color: gray;
+        font-size: .8rem;
+        font-family: "Roboto";
+        overflow: visible;
+   
+    }
+
+    .nav-link-container {
+        width: 4rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        cursor: pointer;
+        color: crimson;
+    }
+
+    .hover-background {
+        background-image: url('ink-splatter3.svg');
+        background-repeat: no-repeat;
+        background-size: 5rem;
         background-position: center 60%;
     }
 

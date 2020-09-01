@@ -12,6 +12,7 @@ class ConfirmationPopup extends Component {
           header='Remove this show from your watchlist?'
           onCancel={this.props.closePopup}
           onConfirm={this.props.removeFromWatchlist}
+          confirmButton={"Remove"}
         />
       </div>
     )
