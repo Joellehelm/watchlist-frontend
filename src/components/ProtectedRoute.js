@@ -1,10 +1,9 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import Home from './Home';
+import { Redirect, Route } from 'react-router-dom';
 
 function ProtectedRoute({ children, ...rest }) {
     return (
-        <Home
+        <Route
           {...rest}
           render={({ location }) =>
             localStorage.getItem('token') ? (
