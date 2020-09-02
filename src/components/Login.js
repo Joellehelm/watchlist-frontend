@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button, Transition, Message } from "semantic-ui-react";
+import { Button, Transition, Message, Input } from "semantic-ui-react";
 import { login, logout } from "../actions/auth";
 
 class Login extends Component {
@@ -22,9 +22,9 @@ class Login extends Component {
     const { username, password } = this.state;
     let user = {username: username, password: password};
 
-    this.props.login(user);
+    this.props.login(user, this.props.history);
 
-    this.setState({username: "", password: ""});
+    this.setState({username: "", password: ""})
   };
 
   render() {
@@ -34,9 +34,9 @@ class Login extends Component {
       <div style={this.props.clicked ? { visibility: "visible" } : { visibility: "hidden" }} className={this.props.loginStyleName}>
 
         <form className="login-form" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
+          <Input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
           
-          <input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
+          <Input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
           <Button className="login-btn" type="submit">Submit</Button>
         </form>
 

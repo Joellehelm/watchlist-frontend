@@ -27,7 +27,7 @@ export const register = (user) => dispatch => {
 
 
 
-export const login = (user) => dispatch => {
+export const login = (user, history) => dispatch => {
   return fetch('http://localhost:3000/login', {
     // return fetch("https://xmarkbackend.herokuapp.com/login", {
     method: "POST",
@@ -43,11 +43,11 @@ export const login = (user) => dispatch => {
       if (response.user) {
         dispatch({ type: action.LOGIN, payload: response })
         localStorage.setItem('token', response.jwt)
-        // dispatch(getWatchlist())
+        history.push("/home")
       } else {
         dispatch({ type: action.WRONG_LOGIN, })
       }
-    })
+    }).catch(err => console.log(err))
 
 };
 

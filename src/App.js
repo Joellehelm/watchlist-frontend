@@ -46,7 +46,7 @@ class App extends Component {
             <Route exact path='/account' > <Account history={history} /> </Route>
             <Route exact path='/watchlist'> <Watchlist history={history} /> </Route>
             <Route exact path='/show-progress'> <ShowProgress history={history} /> </Route>
-            <Route exact path='/'> <Landing /> </Route>
+            <Route exact path='/'> <Landing history={history} /> </Route>
             <Route exact path="*"> <NoMatch /> </Route>
           </Switch>
         </Router>   
