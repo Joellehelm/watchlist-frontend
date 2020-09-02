@@ -56,7 +56,6 @@ class SignUp extends Component {
     render() {
         const { usernameError, emailError } = this.props
         const { username, email, password, password_confirmation } = this.state
-        console.log(this.props)
         return (
 
             <div style={this.props.clicked ? { visibility: "visible" } : { visibility: "hidden" }} className={this.props.signupStyleName}>

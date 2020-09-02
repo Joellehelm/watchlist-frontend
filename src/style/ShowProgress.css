@@ -67,6 +67,8 @@
 .progress-inner p {
     margin: 0;
     color: crimson;
+    background-color: rgba(245, 245, 245, 0.726);
+    border-radius: .2rem;
 }
 
 .show-box-inner {
@@ -265,6 +267,8 @@
     .progress-inner p {
         margin: 0;
         color: crimson;
+        background-color: rgba(245, 245, 245, 0.726);
+        border-radius: .2rem;
     }
     
     .show-box-inner {
@@ -414,7 +418,7 @@
 
 @media(min-width: 800px) and (max-width: 1439px) {
     .show-progress-container {
-        margin-top: 20%;
+        margin-top: 15%;
         max-width: 50rem;
         text-align: center;
         border: 0.0625rem solid black;
@@ -435,7 +439,7 @@
         align-items: center;
         justify-content: center;
         background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
-        background-size: 56.25rem, 31.25rem;
+        background-size: 0rem, 40rem;
         background-repeat: no-repeat;
         background-position: 150% 100%, 0% 23%;
     
@@ -460,7 +464,7 @@
         background-image: url('ink-splatter3.svg');
         background-repeat: no-repeat;
         background-size: 56.25rem;
-        background-position: 80% 40%;
+        background-position: 36% 40%;
     }
     
     
@@ -476,6 +480,8 @@
     .progress-inner p {
         margin: 0;
         color: crimson;
+        background-color: rgba(245, 245, 245, 0.726);
+        border-radius: .2rem;
     }
 
   
@@ -631,7 +637,7 @@
 
 @media(min-width: 600px) and (max-width: 799px){
     .show-progress-container {
-        margin-top: 30%;
+        margin-top: 22%;
         max-width: 40rem;
         text-align: center;
         border: 0.0625rem solid black;
@@ -652,9 +658,10 @@
         align-items: center;
         justify-content: center;
         background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
-        background-size: 56.25rem, 31.25rem;
+        background-size: 0rem, 31.25rem;
+        background-attachment: fixed;
         background-repeat: no-repeat;
-        background-position: 150% 100%, 0% 23%;
+        background-position: 150% 100%, 0% 25%;
     
     }
     
@@ -677,7 +684,7 @@
         background-image: url('ink-splatter3.svg');
         background-repeat: no-repeat;
         background-size: 56.25rem;
-        background-position: 80% 40%;
+        background-position: 40% 40%;
     }
     
     
@@ -693,6 +700,8 @@
     .progress-inner p {
         margin: 0;
         color: crimson;
+        background-color: rgba(245, 245, 245, 0.726);
+        border-radius: .2rem;
     }
 
   
@@ -870,8 +879,9 @@
         align-items: center;
         justify-content: center;
         background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
-        background-size: 56.25rem, 31.25rem;
+        background-size: 0rem, 31.25rem;
         background-repeat: no-repeat;
+        background-attachment: fixed;
         background-position: 150% 100%, 0% 23%;
     
     }
@@ -895,7 +905,7 @@
         background-image: url('ink-splatter3.svg');
         background-repeat: no-repeat;
         background-size: 56.25rem;
-        background-position: 80% 40%;
+        background-position: 40% 38%;
     }
     
     
@@ -911,6 +921,8 @@
     .progress-inner p {
         margin: 0;
         color: crimson;
+        background-color: rgba(245, 245, 245, 0.726);
+        border-radius: .2rem;
     }
 
   
@@ -1067,7 +1079,7 @@
 @media(min-width: 350px) and (max-width: 449px){
     .show-progress-container {
         margin-top: 25%;
-        margin-bottom: 15rem;
+        margin-bottom: 3rem;
         max-width: 20rem;
         text-align: center;
         border: 0.0625rem solid black;
@@ -1091,9 +1103,10 @@
         align-items: center;
         justify-content: center;
         background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
-        background-size: 56.25rem, 31.25rem;
+        background-size: 0rem, 35rem;
         background-repeat: no-repeat;
-        background-position: 150% 100%, 0% 23%;
+        background-attachment: fixed;
+        background-position: 10% 100%, 20% 55%;
     
     }
     
@@ -1117,7 +1130,7 @@
         background-image: url('ink-splatter3.svg');
         background-repeat: no-repeat;
         background-size: 56.25rem;
-        background-position: 80% 40%;
+        background-position: 40% 38%;
     }
     
     
@@ -1134,6 +1147,8 @@
         margin: 0;
         color: crimson;
         font-size: 18px;
+        background-color: rgba(245, 245, 245, 0.726);
+        border-radius: .2rem;
     }
 
   
@@ -1275,10 +1290,6 @@
 
     .ui.primary.button:hover {
         background-color: rgb(220, 20, 60) !important;
-    }
-
-    .ui.visible.visible.visible.visible.message {
-       display: none;
     }
 
 
