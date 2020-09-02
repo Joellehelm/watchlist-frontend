@@ -428,8 +428,6 @@
         -webkit-box-shadow: -0.3125rem 0.3125rem 0.625rem 0.5rem rgba(0, 0, 0, 0.699);
         -moz-box-shadow: -0.3125rem 0.3125rem 0.625rem 0.5rem rgb(0, 0, 0, 0.699);
         box-shadow: -0.3125rem 0.3125rem 0.625rem 0.3125rem rgb(0, 0, 0, 0.699);
-    
-       
     }
     
     .show-progress-wrapper {
@@ -441,7 +439,8 @@
         background-image: url('Galleon_Sail.svg'), url('ink-splatter5.svg');
         background-size: 0rem, 40rem;
         background-repeat: no-repeat;
-        background-position: 150% 100%, 0% 23%;
+        background-attachment: fixed;
+        background-position: 150% 100%, 0% 26%;
     
     }
     
