@@ -1292,10 +1292,6 @@
         background-color: rgb(220, 20, 60) !important;
     }
 
-    .ui.visible.visible.visible.visible.message {
-       display: none;
-    }
-
 
     .modal-top {
         height: 25rem !important;

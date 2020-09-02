@@ -266,6 +266,8 @@
     border-radius: 0.3125rem !important;
     margin-right: -10.3125rem;
     color:rgba(0, 0, 0, 0.685) !important;
+    position:relative;
+    z-index: 10;
   }
   .login-scroll:hover {
     cursor: pointer;
@@ -286,6 +288,8 @@
     border-radius: 0.3125rem !important;
     margin-left: -10.3125rem;
     color:rgba(0, 0, 0, 0.685) !important;
+    position:relative;
+    z-index: 10;
 
   }
 
@@ -368,12 +372,12 @@
   }
 
   .login-form input {
-    border: 0.0625rem solid gray;
+    border: 0.0625rem solid gray !important;
     height: 2.5rem;
     width: 18.75rem;
-    text-align: center;
-    font-size: 1.25rem;
-    border-radius: 0.625rem;
+    text-align: center !important;
+    font-size: 1.25rem !important;
+    border-radius: 0.625rem !important;
   }
 
   .signup-form input {
@@ -410,11 +414,21 @@
   .signup-messages {
     position: absolute;
     margin-top: 20rem;
+    display: flex;
+    align-items: center;
+    width: 30rem;
+    direction: ltr;
+    flex-direction: column;
   }
 
   .login-messages {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 20rem;
+    display: flex;
+    align-items: center;
+    width: 30rem;
+    direction: ltr;
+    flex-direction: column;
   }
 
 }
@@ -604,12 +618,22 @@
 
   .signup-messages {
     position: absolute;
-    margin-top: 20rem;
+    margin-top: 23rem;
+    display: flex;
+    align-items: center;
+    width: 30rem;
+    direction: ltr;
+    flex-direction: column;
   }
 
   .login-messages {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 23rem;
+    display: flex;
+    align-items: center;
+    width: 30rem;
+    direction: ltr;
+    flex-direction: column;
   }
 
 }
@@ -678,8 +702,12 @@
   }
 
   .signup-messages {
+    margin-top: 25rem;
     width: 20rem;
-    
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
