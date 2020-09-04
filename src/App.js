@@ -9,7 +9,7 @@ import NoMatch from './components/NoMatch'
 import Watchlist from './components/Watchlist'
 import ProtectedRoute from './components/ProtectedRoute'
 import ShowProgress from './components/ShowProgress'
-import './style/App.css'
+import Burger from 'react-css-burger';
 import { connect } from 'react-redux';
 import { autoLogin } from './actions/auth';
 import { createBrowserHistory } from "history";
@@ -18,39 +18,69 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import './style/App.css'
 
 const history = createBrowserHistory();
 class App extends Component {
- 
-   componentDidMount() {
-        if (localStorage.getItem('token')) {
-            this.props.autoLogin()
-        }else{
-          history.push("/")
-        }
+  constructor() {
+    super()
+    this.state = {
+      open: false
     }
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('token')) {
+      this.props.autoLogin()
+    } else {
+      history.push("/")
+    }
+  }
+
+  handleClick = () => {
+    this.setState({ open: !this.state.open })
+  }
+
 
   render() {
-
     return (
       <div>
+        {window.screen.availWidth < 800 ?
+          <>
+            <Burger
+
+              burger="emphatic"
+              onClick={this.handleClick}
+              active={this.state.open}
+            />
+            <div className={this.state.open ? "nav-slide-wrapper" : "nav-slide-closed"}>
+              <div className={this.state.open ? "nav-slide-inner" : "nav-slide-inner-hidden"}>
+                <p className="nav-slide-link" onClick={() => history.push("/home")}>Home</p>
+                <p className="nav-slide-link" onClick={() => history.push("/account")}>Account</p>
+                <p className="nav-slide-link" onClick={() => history.push("/watchlist")}>Watchlist</p>
+              </div>
+            </div>
+          </>
+          :
+          null
+        }
 
         <NavBar history={history} />
-      
-          <div className="app-container">
-        <Router history={history}>
-          <Switch>
-            <Route exact path='/login'> <Login /> </Route>
-            <ProtectedRoute path="/home"><Home /></ProtectedRoute>
-            <Route exact path='/signup'> <SignUp /> </Route>
-            <Route exact path='/account' > <Account history={history} /> </Route>
-            <Route exact path='/watchlist'> <Watchlist history={history} /> </Route>
-            <Route exact path='/show-progress'> <ShowProgress history={history} /> </Route>
-            <Route exact path='/'> <Landing history={history} /> </Route>
-            <Route exact path="*"> <NoMatch /> </Route>
-          </Switch>
-        </Router>   
-        </div> 
+
+        <div className="app-container">
+          <Router history={history}>
+            <Switch>
+              <Route exact path='/login'> <Login /> </Route>
+              <ProtectedRoute path="/home"><Home /></ProtectedRoute>
+              <Route exact path='/signup'> <SignUp /> </Route>
+              <Route exact path='/account' > <Account history={history} /> </Route>
+              <Route exact path='/watchlist'> <Watchlist history={history} /> </Route>
+              <Route exact path='/show-progress'> <ShowProgress history={history} /> </Route>
+              <Route exact path='/'> <Landing history={history} /> </Route>
+              <Route exact path="*"> <NoMatch /> </Route>
+            </Switch>
+          </Router>
+        </div>
 
       </div>
     );

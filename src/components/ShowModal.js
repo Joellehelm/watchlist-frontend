@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Header, Image, Modal, Button, Popup, Message, Transition, TransitionablePortal } from 'semantic-ui-react'
+import { Header, Image, Modal, Button, Popup, TransitionablePortal } from 'semantic-ui-react'
 import skullCoin from '../style/skull.png'
 import filmPlaceholder from '../style/film-placeholder.png'
 import Spyglass from '../style/spyglass.svg'
@@ -9,7 +9,6 @@ class ShowModal extends Component {
   constructor() {
     super()
     this.state = {
-      success: false,
       duration: 500,
       animation: "zoom",
       loading: false
@@ -49,8 +48,8 @@ class ShowModal extends Component {
       awards: showInfo.Awards
     }
 
-    // fetch('http://localhost:3000/shows', {
-      fetch('https://xmarkbackend.herokuapp.com/shows', {
+    fetch('http://localhost:3000/shows', {
+      // fetch('https://xmarkbackend.herokuapp.com/shows', {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -67,10 +66,11 @@ class ShowModal extends Component {
         }
         this.setState({loading: false})
       })
+      .catch(err => {console.log("You can't add the same show more than once to your watchlist.")})
   }
 
   handleModal = () => {
-    this.setState({ success: false })
+    this.setState({success: false})
     this.props.openOrCloseModal()
   }
 
@@ -111,12 +111,7 @@ class ShowModal extends Component {
               <div className="modal-bottom">
                 <Popup content='IMDB Rating' trigger={<div className="modal-rating"><img className="rating-icon" src={skullCoin} alt="Pirate coin" />  {this.props.show.imdbRating}/10</div>} />
 
-                <Transition animation="jiggle" duration={1000}  visible={this.state.success}>
-                  <Message visible={this.state.success} positive>
-                    <Message.Header>Successfully added to your watchlist!</Message.Header>
-                  </Message>
-                </Transition>
-
+ 
                 {this.props.show.inWatchlist || this.state.success ?
                   <div className="spyglass-container">
                     <img className="spyglass-icon" src={Spyglass} alt="spyglass icon" />

@@ -1,72 +1,3 @@
-/* .account-container {
-    display: flex;
-    justify-content: center;
-}
-
-.account-inner {
-    border-radius: 10px;
-    background-color: white;
-    margin-top: 175px;
-    text-align: center;
-    width: 1000px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.ui.grid {
-    width: 1000px;
-    padding-left: 30px;
-    padding-top: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-    margin-left: 0px;
-}
-
-.account-title {
-    font-size: 30px;
-}
-
-.account-info-container {
-    font-size: 20px;
-    height: 408px;
-    display: grid;
-}
-
-.change-email-container {
-    height: 408px;
-}
-
-.change-email-container form {
-    height: 300px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.change-email-container form input {
-    height: 40px;
-    width: 300px;
-    border-radius: 10px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.update-email-header {
-    padding-top: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: "Roboto";
-}
-
-.update-email-btn {
-    height: 40px;
-    width: 300px;
-} */
-/* ABOVE IS ORIGINAL PX */
-
 @media (min-width: 1440px) and (max-width: 1440px) {
     .account-container {
         overflow: hidden;
@@ -408,7 +339,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 4rem; */
     font-size: 1rem;
     position: absolute;
     margin-top: 30rem;
