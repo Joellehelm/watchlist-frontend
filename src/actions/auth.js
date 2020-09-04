@@ -3,8 +3,8 @@ import * as action from './actionTypes'
 
 
 export const register = (user) => dispatch => {
-  // return fetch('http://localhost:3000/users', {
-    return fetch("https://xmarkbackend.herokuapp.com/users", {
+  return fetch('http://localhost:3000/users', {
+    // return fetch("https://xmarkbackend.herokuapp.com/users", {
     method: "POST",
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -28,8 +28,8 @@ export const register = (user) => dispatch => {
 
 
 export const login = (user, history) => dispatch => {
-  // return fetch('http://localhost:3000/login', {
-    return fetch("https://xmarkbackend.herokuapp.com/login", {
+  return fetch('http://localhost:3000/login', {
+    // return fetch("https://xmarkbackend.herokuapp.com/login", {
     method: "POST",
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -60,8 +60,8 @@ export const logout = (history) => dispatch => {
 
 
 export const autoLogin = () => dispatch => {
-  // return fetch("http://localhost:3000/auto_login", {
-    return fetch("https://xmarkbackend.herokuapp.com/auto_login", {
+  return fetch("http://localhost:3000/auto_login", {
+    // return fetch("https://xmarkbackend.herokuapp.com/auto_login", {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Authorization": `JWT ${localStorage.getItem('token')}`,

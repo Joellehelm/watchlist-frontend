@@ -17,6 +17,7 @@
    
 }
 
+
 .show-progress-wrapper {
     padding-top: 7%;
     height: 100vh;
@@ -631,7 +632,15 @@
         background-color: rgb(220, 20, 60) !important;
     }
 }
- 
+
+@media (min-width: 760px) and (max-width: 799px){
+    .ui.small.modal {
+        position: relative;
+        max-height: 12.5rem !important;
+        top: none;
+        left: none;
+    }
+}
 
 
 @media(min-width: 600px) and (max-width: 799px){
@@ -834,7 +843,7 @@
     
     .ui.small.modal {
         position: relative;
-        max-height: 12.5rem;
+        max-height: 11rem;
         top: none;
         left: none;
     }
@@ -1055,7 +1064,7 @@
     
     .ui.small.modal {
         position: relative;
-        max-height: 12.5rem;
+        max-height: 11rem;
         top: none;
         left: none;
     }
@@ -1329,5 +1338,14 @@
         flex-direction: column;
     }
  
+}
+
+@media (min-width: 410px) and (max-width: 449px) {
+    .ui.small.modal {
+        position: relative;
+        max-height: 11rem !important;
+        top: none;
+        left: none;
+    }
 }
  
