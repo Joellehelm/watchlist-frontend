@@ -3,8 +3,8 @@ import React from 'react';
 function NoMatch() {
 
     return (
-        <div>
-           ROUTE NOT FOUND
+        <div className="no-route">
+          <p>404 ROUTE NOT FOUND</p>
         </div>
     );
 }
