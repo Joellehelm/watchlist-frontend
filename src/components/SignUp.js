@@ -33,7 +33,7 @@ class SignUp extends Component {
         } else {
             this.setState({ passwordError: false })
             let user = {
-                username: username,
+                username: username.toLowerCase(),
                 email: email,
                 password: password,
                 password_confirmation: password_confirmation
