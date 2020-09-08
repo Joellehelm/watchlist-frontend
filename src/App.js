@@ -41,6 +41,10 @@ class App extends Component {
     this.setState({ open: !this.state.open })
   }
 
+  navClick = (location) => {
+    history.push(location)
+    this.setState({open: false})
+  }
 
   render() {
     return (
@@ -55,9 +59,9 @@ class App extends Component {
             />
             <div className={this.state.open ? "nav-slide-wrapper" : "nav-slide-closed"}>
               <div className={this.state.open ? "nav-slide-inner" : "nav-slide-inner-hidden"}>
-                <p className="nav-slide-link" onClick={() => history.push("/home")}>Home</p>
-                <p className="nav-slide-link" onClick={() => history.push("/account")}>Account</p>
-                <p className="nav-slide-link" onClick={() => history.push("/watchlist")}>Watchlist</p>
+                <p className="nav-slide-link" onClick={() => this.navClick("/home")}>Home</p>
+                <p className="nav-slide-link" onClick={() => this.navClick("/account")}>Account</p>
+                <p className="nav-slide-link" onClick={() => this.navClick("/watchlist")}>Watchlist</p>
               </div>
             </div>
           </>

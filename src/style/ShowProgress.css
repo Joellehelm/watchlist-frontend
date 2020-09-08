@@ -864,7 +864,7 @@
 
 @media(min-width: 450px) and (max-width: 599px){
     .show-progress-container {
-        margin-top: 25%;
+        margin-top: 30%;
         max-width: 30rem;
         text-align: center;
         border: 0.0625rem solid black;
@@ -1086,7 +1086,7 @@
 
 @media(min-width: 350px) and (max-width: 449px){
     .show-progress-container {
-        margin-top: 25%;
+        margin-top: 35%;
         margin-bottom: 3rem;
         max-width: 20rem;
         text-align: center;
