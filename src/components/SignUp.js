@@ -24,7 +24,6 @@ class SignUp extends Component {
         })
     };
 
-
     handleSubmit = (event) => {
         event.preventDefault()
         const { username, email, password, password_confirmation } = this.state
