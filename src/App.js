@@ -31,6 +31,7 @@ class App extends Component {
 
   componentDidMount() {
     if (localStorage.getItem('token')) {
+      history.push("/home")
       this.props.autoLogin()
     } else {
       history.push("/")
