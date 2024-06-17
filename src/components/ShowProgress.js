@@ -51,8 +51,7 @@ class ShowProgress extends Component {
     }
 
     removeFromWatchlist = () => {
-        // fetch(`http://localhost:3000/user_shows/${this.props.progress.showProgress.show.user_show.id}`, {
-            fetch(`https://xmarkbackend.herokuapp.com/user_shows/${this.props.progress.showProgress.show.user_show.id}`, {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/user_shows/${this.props.progress.showProgress.show.user_show.id}`, {
             method: "DELETE",
             headers: {
                 "Access-Control-Allow-Origin": "*",
