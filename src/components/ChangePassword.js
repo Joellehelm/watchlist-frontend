@@ -27,8 +27,7 @@ class ChangePassword extends Component {
     if (this.state.password !== this.state.passwordConfirmation) {
       this.setState({ passwordNotMatch: true })
     } else {
-      // fetch(`http://localhost:3000/update_password`, {
-        fetch(`https://xmarkbackend.herokuapp.com/update_password`, {
+      fetch(`${process.env.REACT_APP_API_ENDPOINT}/update_password`, {
         
         method: "PATCH",
         headers: {

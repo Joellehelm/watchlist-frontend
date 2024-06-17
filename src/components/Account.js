@@ -36,8 +36,7 @@ class Account extends Component {
             this.setState({ success: false, passwordError: true })
         } else {
 
-            // fetch(`http://localhost:3000/users/${this.props.auth.user.id}`, {
-                fetch(`https://xmarkbackend.herokuapp.com/users/${this.props.auth.user.id}`, {
+            fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${this.props.auth.user.id}`, {
                 method: "PATCH",
                 headers: {
                     "Authorization": `JWT ${localStorage.getItem("token")}`,

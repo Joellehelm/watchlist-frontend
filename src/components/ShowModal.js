@@ -48,8 +48,7 @@ class ShowModal extends Component {
       awards: showInfo.Awards
     }
 
-    // fetch('http://localhost:3000/shows', {
-      fetch('https://xmarkbackend.herokuapp.com/shows', {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/shows`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",

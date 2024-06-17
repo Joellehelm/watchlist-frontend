@@ -13,8 +13,7 @@ class EpisodeTable extends Component {
         const progressExists = this.props.progress.showProgress.progress.find(p => p.episode_id === ep.id)
 
         if (progressExists) {
-            // fetch(`http://localhost:3000/progresses/${progressExists.id}`, {
-                fetch(`https://xmarkbackend.herokuapp.com/progresses/${progressExists.id}`, {
+            fetch(`${process.env.REACT_APP_API_ENDPOINT}/progresses/${progressExists.id}`, {
                 method: "DELETE",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -28,8 +27,7 @@ class EpisodeTable extends Component {
                 this.props.getShowProgress(this.props.auth.user.id, this.props.progress.showProgress.show.show.imdbID)
             })
         } else {
-            // fetch("http://localhost:3000/progresses", {
-            fetch("https://xmarkbackend.herokuapp.com/progresses", {
+            fetch(`${process.env.REACT_APP_API_ENDPOINT}/progresses`, {
                 method: "POST",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
