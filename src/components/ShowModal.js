@@ -34,7 +34,6 @@ class ShowModal extends Component {
 
     const showInfo = this.props.show
     const showObj = {
-      user_id: this.props.user.user.id,
       name: showInfo.Title,
       genre: showInfo.Genre,
       poster: showInfo.Poster,
