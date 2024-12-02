@@ -41,12 +41,17 @@ class Login extends Component {
         </form>
 
         <div className="login-messages">
-        <Transition animation="jiggle" duration={1000} visible={this.props.auth.success === false}>
-            <Message visible={this.props.auth.success === false && this.props.clicked} hidden={this.props.auth.success}negative>
-              <Message.Header>Username or Password is incorrect.</Message.Header>
+          <Transition animation="jiggle" duration={1000} visible={this.props.auth.success === false}>
+              <Message visible={this.props.auth.success === false && this.props.clicked} hidden={this.props.auth.success}negative>
+                <Message.Header>Username or Password is incorrect.</Message.Header>
+              </Message>
+          </Transition>
+          <Transition animation="jiggle" duration={1000} visible={this.props.created}>
+            <Message visible={this.props.created} hidden={ this.props.created === false} positive>
+              <Message.Header>Account Successfully Created.</Message.Header>
             </Message>
           </Transition>
-          </div>
+        </div>
       </div>
 
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login'
 import SignUp from './SignUp'
 import { connect } from 'react-redux';
+import {Transition, Message} from 'semantic-ui-react';
 import '../style/Landing.css'
 
 
@@ -12,12 +13,15 @@ class Landing extends Component {
             loginClick: false,
             signupClick: false,
             loginStyleName: "reveal-form-hidden",
-            signupStyleName: "reveal-signup-hidden"
+            signupStyleName: "reveal-signup-hidden",
+            created: false
         }
     }
 
-  
-   
+    creationSuccess = () => {
+      this.setState({ created: true })
+      setTimeout(() => { this.setState({created: false }); }, 5000)
+    }
 
     openScroll = (type) => {
         this.setState({scrollType: type})
@@ -39,8 +43,8 @@ class Landing extends Component {
                             <div className="login-scroll" onClick={() => this.openScroll("login")}><p>Login</p></div>
                             
                             <div className="form-placeholder" style={this.state.signupClick ? {direction: "rtl"} : {direction: "ltr"}} >
-                                <Login history={this.props.history} clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} />
-                                <SignUp clicked={this.state.signupClick} signupStyleName={this.state.signupStyleName}/>
+                                <Login history={this.props.history} clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} created={this.state.created} />
+                                <SignUp clicked={this.state.signupClick} signupStyleName={this.state.signupStyleName} openScroll={this.openScroll} creationSuccess={this.creationSuccess}/>
                             </div>
                            
                             <div className="signup-scroll"  onClick={() => this.openScroll("signup")}>Sign Up</div>

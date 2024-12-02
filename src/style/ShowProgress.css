@@ -1349,3 +1349,29 @@
     }
 }
  
+.update-show-button {
+  width: 100%;
+}
+
+.update-show-description {
+  color: gray;
+  font-family: "Red Rose", cursive;
+  font-weight: 300;
+}
+
+.update-modal-content {
+  padding: 0rem 4rem 4rem 4rem;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.modal-inner {
+  max-width: 50rem;
+}
+
+.visible.menu.transition {
+  max-height: 10.5rem !important;
+}

@@ -38,7 +38,12 @@ class SignUp extends Component {
                 password: password,
                 password_confirmation: password_confirmation
             }
-            this.props.register(user)
+            this.props.register(user).then((r) => {
+              if(r === 'success'){
+                this.props.openScroll('login')
+                this.props.creationSuccess()
+              }
+            })
 
             this.setState({
                 username: "",
@@ -88,12 +93,6 @@ class SignUp extends Component {
                     <Transition animation="jiggle" duration={1000} visible={usernameError}>
                         <Message visible={usernameError && this.props.clicked} hidden={usernameError === false} negative>
                             <Message.Header>Username already taken.</Message.Header>
-                        </Message>
-                    </Transition>
-
-                    <Transition animation="jiggle" duration={1000} visible={this.props.created === true}>
-                        <Message visible={this.props.created && this.props.clicked} hidden={ this.props.created === undefined} positive>
-                            <Message.Header>Account Successfully Created.</Message.Header>
                         </Message>
                     </Transition>
                 </div>

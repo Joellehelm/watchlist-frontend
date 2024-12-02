@@ -20,18 +20,6 @@ class Home extends Component {
     }
 
     showSearch = (term) => {
-        // this.setState({shows: []})
-        // for(let i = 1; i <= 3; i++){
-        //     fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}&page=${i}`)
-        //     .then(r => r.json())
-        //     .then(response => {
-        //         console.log(response)
-        //         this.setState({shows: [...response.Search, ...this.state.shows]})
-
-        //     })
-        //     .catch(error => console.log('API Errors:', error))
-        // }
-
         fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}`)
             .then(r => r.json())
             .then(response => {
@@ -39,9 +27,6 @@ class Home extends Component {
 
             })
             .catch(error => console.log('API Errors:', error))
-
-
-
 
     };
 

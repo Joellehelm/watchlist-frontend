@@ -224,11 +224,6 @@
         font-family: "Roboto";
         font-weight: 300;
     }
-
-    .logout-link:hover {
-        cursor: pointer;
-        color: crimson;
-    }
 }
 
 
@@ -361,9 +356,9 @@
     font-family: "Roboto";
     font-weight: 300;
 }
+}
 
 .logout-link:hover {
-    cursor: pointer;
-    color: crimson;
-}
+  cursor: pointer;
+  color: crimson;
 }
