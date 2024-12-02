@@ -39,7 +39,6 @@ class ChangePassword extends Component {
       })
         .then(r => r.json())
         .then(response => {
-          console.log(response)
           if (response.updated) {
             this.setState({ password: "", passwordConfirmation: "", newPassword: "", passwordUpdated: true })
           } else {

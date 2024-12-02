@@ -77,7 +77,6 @@ class ShowModal extends Component {
     const { animation, duration } = this.state
     const { open } = this.props
     return (
-      
       <TransitionablePortal open={open} transition={{ animation, duration }}><Modal open={true} onClose={this.handleModal} centered={true} size={"large"} closeIcon={{ style: { top: '1.0535rem', right: '1rem' }, color: 'black', name: 'close' }}>
         <Modal.Header >{this.props.show.Title}</Modal.Header>
         <Modal.Content image>
@@ -107,7 +106,9 @@ class ShowModal extends Component {
 
               </div>
               <div className="modal-bottom">
-                <Popup content='IMDB Rating' trigger={<div className="modal-rating"><img className="rating-icon" src={skullCoin} alt="Pirate coin" />  {this.props.show.imdbRating}/10</div>} />
+                <Popup content='IMDB Rating' trigger={<div className="modal-rating" onClick={() => window.open(`https://www.imdb.com/title/${this.props.show.imdbID}`)}>
+                  <img className="rating-icon" src={skullCoin} alt="Pirate coin"  />  {this.props.show.imdbRating}/10
+                </div>} />
 
  
                 {this.props.show.inWatchlist || this.state.success ?
