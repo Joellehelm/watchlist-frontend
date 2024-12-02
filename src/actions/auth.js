@@ -17,6 +17,7 @@ export const register = (user) => dispatch => {
       if (response.status === "created") {
 
         dispatch({ type: action.CURRENT_USER, payload: response })
+        return "success"
       } else if (response.status === "not_acceptable") {
         dispatch({ type: action.SIGNUP_ERRORS, payload: response })
       }

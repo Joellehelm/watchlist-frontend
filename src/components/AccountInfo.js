@@ -16,7 +16,7 @@ function AccountInfo(props) {
                 </div>
             </div>
             <div>
-                <p onClick={() => props.logout(props.history)} className="logout-link">Logout</p>
+                <div onClick={() => props.logout(props.history)} className="logout-link">Logout</div>
             </div>
         </div>
     );
