@@ -93,6 +93,7 @@ class ShowProgress extends Component {
 
     render() {
         const showProgress = this.props.progress.showProgress.progress
+        // TODO: check that safe navigation operator is needed here.
         const show = this.props?.progress?.showProgress?.show?.show
     
         return (
