@@ -28,7 +28,7 @@ class ChangePassword extends Component {
       this.setState({ passwordNotMatch: true })
     } else {
       fetch(`${process.env.REACT_APP_API_ENDPOINT}/update_password`, {
-        
+
         method: "PATCH",
         headers: {
           "Authorization": `JWT ${localStorage.getItem("token")}`,
@@ -70,11 +70,11 @@ class ChangePassword extends Component {
             </Message>
           </Transition>
 
-          <Transition animation="jiggle" duration={1000}  visible={this.state.passwordError}>
-                   <Message visible={this.state.passwordError} hidden={this.state.passwordError === false} negative>
-                     <Message.Header>Error password was not updated.</Message.Header>
-                   </Message>
-                 </Transition>
+          <Transition animation="jiggle" duration={1000} visible={this.state.passwordError}>
+            <Message visible={this.state.passwordError} hidden={this.state.passwordError === false} negative>
+              <Message.Header>Error password was not updated.</Message.Header>
+            </Message>
+          </Transition>
 
           <Button className="update-email-btn" type="submit" value="Submit">Submit</Button>
         </form>
