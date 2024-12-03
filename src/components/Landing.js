@@ -6,58 +6,58 @@ import '../style/Landing.css'
 
 
 class Landing extends Component {
-    constructor(){
-        super() 
-        this.state = {
-            loginClick: false,
-            signupClick: false,
-            loginStyleName: "reveal-form-hidden",
-            signupStyleName: "reveal-signup-hidden",
-            created: false
-        }
+  constructor() {
+    super()
+    this.state = {
+      loginClick: false,
+      signupClick: false,
+      loginStyleName: "reveal-form-hidden",
+      signupStyleName: "reveal-signup-hidden",
+      created: false
     }
+  }
 
-    creationSuccess = () => {
-      this.setState({ created: true })
-      setTimeout(() => { this.setState({created: false }); }, 5000)
+  creationSuccess = () => {
+    this.setState({ created: true })
+    setTimeout(() => { this.setState({ created: false }); }, 5000)
+  }
+
+  openScroll = (type) => {
+    this.setState({ scrollType: type })
+    if (type === "login") {
+      this.setState({ signupClick: false, loginClick: true, loginStyleName: "reveal-form", signupStyleName: "reveal-signup-hidden" })
+    } else if (type === "signup") {
+      this.setState({ signupClick: true, loginClick: false, loginStyleName: "reveal-form-hidden", signupStyleName: "reveal-signup" })
     }
-
-    openScroll = (type) => {
-        this.setState({scrollType: type})
-        if(type === "login"){
-            this.setState({signupClick: false, loginClick: true, loginStyleName: "reveal-form", signupStyleName: "reveal-signup-hidden"})
-        }else if(type === "signup"){
-            this.setState({signupClick: true, loginClick: false, loginStyleName: "reveal-form-hidden", signupStyleName: "reveal-signup"})
-        }
-    }
+  }
 
 
 
-    render() {
-        return (
-            <div className="landing-container">
-             
-                        <div className="acc-scroll-container">
-                     
-                            <div className="login-scroll" onClick={() => this.openScroll("login")}><p>Login</p></div>
-                            
-                            <div className="form-placeholder" style={this.state.signupClick ? {direction: "rtl"} : {direction: "ltr"}} >
-                                <Login history={this.props.history} clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} created={this.state.created} />
-                                <SignUp clicked={this.state.signupClick} signupStyleName={this.state.signupStyleName} openScroll={this.openScroll} creationSuccess={this.creationSuccess}/>
-                            </div>
-                           
-                            <div className="signup-scroll"  onClick={() => this.openScroll("signup")}>Sign Up</div>
-                      
-                        </div>
-          
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="landing-container">
+
+        <div className="acc-scroll-container">
+
+          <div className="login-scroll" onClick={() => this.openScroll("login")}><p>Login</p></div>
+
+          <div className="form-placeholder" style={this.state.signupClick ? { direction: "rtl" } : { direction: "ltr" }} >
+            <Login history={this.props.history} clicked={this.state.loginClick} loginStyleName={this.state.loginStyleName} created={this.state.created} />
+            <SignUp clicked={this.state.signupClick} signupStyleName={this.state.signupStyleName} openScroll={this.openScroll} creationSuccess={this.creationSuccess} />
+          </div>
+
+          <div className="signup-scroll" onClick={() => this.openScroll("signup")}>Sign Up</div>
+
+        </div>
+
+      </div>
+    );
+  }
 }
 
 
 const mapStateToProps = (state) => ({
-    auth: state.auth
+  auth: state.auth
 })
 
 

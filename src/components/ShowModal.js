@@ -30,7 +30,7 @@ class ShowModal extends Component {
   addToWatchList = (event) => {
     event.preventDefault()
 
-    this.setState({loading: true})
+    this.setState({ loading: true })
 
     const showInfo = this.props.show
     const showObj = {
@@ -62,13 +62,12 @@ class ShowModal extends Component {
         if (response.id) {
           this.setState({ success: true })
         }
-        this.setState({loading: false})
+        this.setState({ loading: false })
       })
-      .catch(err => {console.log("You can't add the same show more than once to your watchlist.")})
   }
 
   handleModal = () => {
-    this.setState({success: false})
+    this.setState({ success: false })
     this.props.openOrCloseModal()
   }
 
@@ -107,10 +106,10 @@ class ShowModal extends Component {
               </div>
               <div className="modal-bottom">
                 <Popup content='IMDB Rating' trigger={<div className="modal-rating" onClick={() => window.open(`https://www.imdb.com/title/${this.props.show.imdbID}`)}>
-                  <img className="rating-icon" src={skullCoin} alt="Pirate coin"  />  {this.props.show.imdbRating}/10
+                  <img className="rating-icon" src={skullCoin} alt="Pirate coin" />  {this.props.show.imdbRating}/10
                 </div>} />
 
- 
+
                 {this.props.show.inWatchlist || this.state.success ?
                   <div className="spyglass-container">
                     <img className="spyglass-icon" src={Spyglass} alt="spyglass icon" />

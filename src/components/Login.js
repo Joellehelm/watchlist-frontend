@@ -14,40 +14,40 @@ class Login extends Component {
 
   handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state;
-    let user = {username: username, password: password};
+    let user = { username: username, password: password };
 
     this.props.login(user, this.props.history);
 
-    this.setState({username: "", password: ""})
+    this.setState({ username: "", password: "" })
   };
 
   render() {
     const { username, password } = this.state;
- 
+
     return (
       <div style={this.props.clicked ? { visibility: "visible" } : { visibility: "hidden" }} className={this.props.loginStyleName}>
 
         <form className="login-form" onSubmit={this.handleSubmit}>
           <Input type="text" placeholder="Username" name="username" value={username} onChange={this.handleChange} />
-          
-          <Input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange}/>
+
+          <Input type="password" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
           <Button className="login-btn" type="submit">Submit</Button>
         </form>
 
         <div className="login-messages">
           <Transition animation="jiggle" duration={1000} visible={this.props.auth.success === false}>
-              <Message visible={this.props.auth.success === false && this.props.clicked} hidden={this.props.auth.success}negative>
-                <Message.Header>Username or Password is incorrect.</Message.Header>
-              </Message>
+            <Message visible={this.props.auth.success === false && this.props.clicked} hidden={this.props.auth.success} negative>
+              <Message.Header>Username or Password is incorrect.</Message.Header>
+            </Message>
           </Transition>
           <Transition animation="jiggle" duration={1000} visible={this.props.created}>
-            <Message visible={this.props.created} hidden={ this.props.created === false} positive>
+            <Message visible={this.props.created} hidden={this.props.created === false} positive>
               <Message.Header>Account Successfully Created.</Message.Header>
             </Message>
           </Transition>

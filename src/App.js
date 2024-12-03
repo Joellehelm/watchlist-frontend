@@ -44,7 +44,7 @@ class App extends Component {
 
   navClick = (location) => {
     history.push(location)
-    this.setState({open: false})
+    this.setState({ open: false })
   }
 
   render() {

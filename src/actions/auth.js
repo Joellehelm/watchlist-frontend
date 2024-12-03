@@ -1,6 +1,4 @@
 import * as action from './actionTypes'
-// import { getWatchlist } from './watchlistActions'
-
 
 export const register = (user) => dispatch => {
   return fetch(`${process.env.REACT_APP_API_ENDPOINT}/users`, {
@@ -22,10 +20,7 @@ export const register = (user) => dispatch => {
         dispatch({ type: action.SIGNUP_ERRORS, payload: response })
       }
     })
-    .catch(error => console.log('API Errors:', error))
 };
-
-
 
 export const login = (user, history) => dispatch => {
   return fetch(`${process.env.REACT_APP_API_ENDPOINT}/login`, {
@@ -46,15 +41,13 @@ export const login = (user, history) => dispatch => {
       } else {
         dispatch({ type: action.WRONG_LOGIN, })
       }
-    }).catch(err => console.log(err))
-
+    })
 };
-
 
 export const logout = (history) => dispatch => {
   localStorage.removeItem("token");
   history.push('/')
-  dispatch({ type: action.LOGOUT})
+  dispatch({ type: action.LOGOUT })
 };
 
 

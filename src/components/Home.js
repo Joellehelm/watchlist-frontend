@@ -5,47 +5,44 @@ import '../style/Home.css'
 
 
 class Home extends Component {
-    constructor() {
-        super()
-        this.state = {
-            shows: [],
-            showsContainer: "shows-container-hidden"
-        }
+  constructor() {
+    super()
+    this.state = {
+      shows: [],
+      showsContainer: "shows-container-hidden"
     }
+  }
 
 
 
-    showContainerSlide = (event) => {
-        this.setState({ showsContainer: "shows-container" })
-    }
+  showContainerSlide = (event) => {
+    this.setState({ showsContainer: "shows-container" })
+  }
 
-    showSearch = (term) => {
-        fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}`)
-            .then(r => r.json())
-            .then(response => {
-                this.setState({ shows: response.Search, searched: true })
-
-            })
-            .catch(error => console.log('API Errors:', error))
-
-    };
+  showSearch = (term) => {
+    fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${term}`)
+      .then(r => r.json())
+      .then(response => {
+        this.setState({ shows: response.Search, searched: true })
+      })
+  };
 
 
-    render() {
-        return (
-            <div className="home-container">
-                <div className="home-box">
-                    <div className="search-bar-container">
+  render() {
+    return (
+      <div className="home-container">
+        <div className="home-box">
+          <div className="search-bar-container">
 
-                        <SearchShows showContainerSlide={this.showContainerSlide} showSearch={this.showSearch} />
-                    </div>
-                    <div className={this.state.showsContainer}>
-                        <Shows history={this.props.history} shows={this.state.shows} />
-                    </div>
-                </div>
-            </div>
-        );
-    }
+            <SearchShows showContainerSlide={this.showContainerSlide} showSearch={this.showSearch} />
+          </div>
+          <div className={this.state.showsContainer}>
+            <Shows history={this.props.history} shows={this.state.shows} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 
