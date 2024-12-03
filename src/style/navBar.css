@@ -270,6 +270,19 @@
   }
 }
 
+@media (max-width: 950px) {
+  .nav-link {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-self: center;
+    color: gray;
+    font-size: 1.3rem;
+    font-family: "Roboto";
+    overflow: visible;
+  }
+}
+
 @media (max-width: 849px) {
   .nav-logo {
     max-height: 4rem;

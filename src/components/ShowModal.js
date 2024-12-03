@@ -64,7 +64,6 @@ class ShowModal extends Component {
         }
         this.setState({ loading: false })
       })
-      .catch(err => { console.log("You can't add the same show more than once to your watchlist.") })
   }
 
   handleModal = () => {

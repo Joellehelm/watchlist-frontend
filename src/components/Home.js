@@ -24,10 +24,7 @@ class Home extends Component {
       .then(r => r.json())
       .then(response => {
         this.setState({ shows: response.Search, searched: true })
-
       })
-      .catch(error => console.log('API Errors:', error))
-
   };
 
 
